@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_disorder.c                               :+:      :+:    :+:   */
+/*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 10:02:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/25 12:34:13 by mostoloz         ###   ########.fr       */
+/*   Created: 2026/06/25 12:40:19 by mostoloz          #+#    #+#             */
+/*   Updated: 2026/06/25 12:45:08 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	calculate_disorder(int *stack)
+void	reverse(t_list **stack)
 {
-	int	mistakes;
-	int	pairs;
-	int	i;
+	t_list	*prev;
+	t_list	*last;
 
-	mistakes = 0;
-	pairs = 0;
-	i = 0;
-	while (stack[i] && stack[i + 1])
+	if (!stack || !*stack)
+		return ;
+	prev = NULL;
+	last = *stack;
+	while (last->next != NULL)
 	{
-		pairs++;
-		if (stack[i] > stack[i + 1])
-			mistakes++;
-		i++;
+		prev = last;
+		last = last->next;
 	}
-	return ((float) mistakes / pairs);
+	prev->next = NULL;
+	last->next = *stack;
+	*stack = last;
+}
+
+void	rreverse(t_list **stack_a, t_list **stack_b)
+{
+	reverse(stack_a);
+	reverse(stack_b);
 }
