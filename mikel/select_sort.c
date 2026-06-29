@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/26 12:34:47 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:33:26 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ t_list	**select_sort(t_list **stack_a)
 
 	current_node = *stack_a;
 	min = current_node->content;
+	min_node = current_node;
 	while (current_node)
 	{
 		while (*stack_a)
 		{
-			if ()
+			if (((*stack_a)->content) < min_node->content)
+				min_node = (*stack_a);
+			rotate(stack_a);
 		}
 	}
 }

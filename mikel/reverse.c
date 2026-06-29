@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:40:19 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/25 12:45:08 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/29 12:03:51 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse(t_list **stack)
+static void	reverse(t_list **stack)
 {
 	t_list	*prev;
 	t_list	*last;
@@ -31,8 +31,28 @@ void	reverse(t_list **stack)
 	*stack = last;
 }
 
-void	rreverse(t_list **stack_a, t_list **stack_b)
+void	rra(t_list **stack_a, t_bench *bench)
 {
 	reverse(stack_a);
-	reverse(stack_b);
+	ft_printf("rra\n");
+	bench->rra += 1;
+	bench->total += 1;
 }
+
+void	rrb(t_list **stack_b, t_bench *bench)
+{
+	reverse(stack_b);
+	ft_printf("rrb\n");
+	bench->rrb += 1;
+	bench->total += 1;
+}
+
+void	rrr(t_list **stack_a, t_list **stack_b, t_bench *bench)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	ft_printf("rrr\n");
+	bench->rrr += 1;
+	bench->total += 1;
+}
+
