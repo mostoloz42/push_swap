@@ -28,62 +28,70 @@ void	ft_free_split(char **aux)
 	free(aux);
 }
 
-int	ft_check(int argc, char **argv)
+int	ft_check_duplicate(int *los_numeros, int numero_actual, int cuenta_numeros)
 {
 	int	i;
-	int j;
-	int	z;
-	char *tem;
-	char **aux_split;
-	char *str;
-	int	*los_numeros;
-	int	cuenta_numeros;
-	int numero_actual;
-	int k;
-	
+
+	i = 0;
+	while (i < cuenta_numeros)
+	{
+		if (los_numeros[i] == numero_actual)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_process_split(char **aux, int	*num, int *cuent_num)
+{
+	int	i;
+	int	numero_actual;
+
+	i = 0;
+	while (aux[i] != NULL)
+	{
+		if (ft_is_number(aux[i]) != 1)
+		{
+			ft_free_split(aux);
+			return (0);
+		}
+		numero_actual = ft_atoi(aux[i]);
+		if (ft_check_duplicate (num, numero_actual, *cuent_num) == 1)
+		{
+			ft_free_split(aux);
+			return (0);
+		}
+		num[*cuent_num] = numero_actual;
+		(*cuent_num)++;
+		i++;
+	}
+	ft_free_split(aux);
+	return (1);
+}
+
+int	ft_check(int argc, char **argv)
+{
+	int		i;
+	char	**aux_split;
+	int		*los_numeros;
+	int		cuenta_numeros;
+
+	i = 1;
 	cuenta_numeros = 0;
 	los_numeros = malloc(sizeof(int) * argc * 2);
-	i = 1;
-	j = 0;
-	
+	if (!los_numeros)
+		return (0);
 	while (i < argc)
 	{
-		if (ft_manejo_flags(argv[i]) == 1)
-		{
+		if (ft_flags(argv[i]) == 1)
 			i++;
-		}
 		else
 		{
-			tem = argv[i];
-			aux_split = ft_split(tem, ' ');
-			z = 0;
-			while (aux_split[z] != NULL)
-			{
-				if (ft_is_number(aux_split[z]) != 1)
-				{
-					ft_free_split(aux_split);
-					free(los_numeros);
-					return (0);
-				}
-				numero_actual = ft_atoi(aux_split[z]);
-				k = 0;
-				while (k < cuenta_numeros)
-				{
-					if (los_numeros[k] == numero_actual)
-					{
-						ft_free_split(aux_split);
-						free(los_numeros);
-						return (0);
-					}
-					k++;
-				}
-				los_numeros[cuenta_numeros] = numero_actual;
-				cuenta_numeros++;
-				z++;
-			}
-			ft_free_split(aux_split);
+			aux_split = ft_split(argv[i], ' ');
+			if (ft_process_split(aux_split, los_numeros, &cuenta_numeros) == 0)
+				return (free(los_numeros), 0);
 			i++;
-		}		
+		}
 	}
 	free(los_numeros);
 	return (1);
@@ -130,7 +138,6 @@ int	ft_manejo_flags(char *argv)
 	s2 = "medium";
 	s3 = "complex";
 	s4 = "adaptive";
-
 	if (ft_strncmp(argv, s1, 7) == 0)
 	{
 		printf("algoritmo simple");
@@ -154,63 +161,20 @@ int	ft_manejo_flags(char *argv)
 	return (0);
 }
 
-int	ft_flags(int argc, char **argv)
+int	ft_flags(char *argv)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (i < argc)
+	if (argv[0] == '-' && argv[1] == '-')
 	{
-		if (argv[i][j] == '-')
-		{
-			j++;
-			if (argv[i][j] == '-')
-			{
-				j++;
-				ft_manejo_flags(&argv[i][j]);
-			}
-		}
-		j = 0;
-		i++;
+		ft_manejo_flags(&argv[2]);
+		return (1);
 	}
 	return (0);
 }
 
-/* int	main(int argc, char *argv[])
-{
-	int	i;
-
-	if (argc < 1)
-		return (0);
-	i = 1;
-	while (i < argc)
-	{
-		printf("%s\n", argv[i]);
-		i++;
-	}
-	ft_flags(argc, argv);
- 	i = 1;
-	while (i < argc)
-	{
-		if (ft_is_number(argv[i]) == 1)
-			printf("%s es un número válido\n", argv[i]);
-		else
-			printf("%s NO es un número válido\n", argv[i]);
-	i++;
-	}
-	return (0);
-}  */
-
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	if (argc < 2)
-	{
-		printf("(Entrada vacía: el programa termina en silencio)\n");
 		return (0);
-	}
-
 	printf("--- Iniciando Validación de Argumentos ---\n");
 	if (ft_check(argc, argv) == 1)
 	{
