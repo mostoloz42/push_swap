@@ -44,8 +44,8 @@ int	ft_check_duplicate(int *los_numeros, int numero_actual, int cuenta_numeros)
 
 int	ft_process_split(char **aux, int	*num, int *cuent_num)
 {
-	int	i;
-	int	numero_actual;
+	long	i;
+	long	numero_actual;
 
 	i = 0;
 	while (aux[i] != NULL)
@@ -55,7 +55,9 @@ int	ft_process_split(char **aux, int	*num, int *cuent_num)
 			ft_free_split(aux);
 			return (0);
 		}
-		numero_actual = ft_atoi(aux[i]);
+		numero_actual = ft_atol(aux[i]);
+		if (ft_min_max(numero_actual) != 1)
+			return (ft_free_split(aux), 0);
 		if (ft_check_duplicate (num, numero_actual, *cuent_num) == 1)
 		{
 			ft_free_split(aux);
