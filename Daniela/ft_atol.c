@@ -7,15 +7,6 @@ long	ft_min_max(long result)
 	return(1);
 }
 
-/* ["1234", "1234","1234","1234","1234","1234"]
-[1234, 243, 43 , 515, 143213241234123412341234]
-
-long arr
-
-arr to lst
-is_overflow? = free a todo, exit (write erroor 2)
-is_duplicate? = free a todo, exit (write erroor 2) */
-
 long	ft_atol(const char *str)
 {
 	long	count;

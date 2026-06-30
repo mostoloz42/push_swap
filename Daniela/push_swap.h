@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:00:33 by francysa          #+#    #+#             */
-/*   Updated: 2026/06/25 16:23:36 by francysa         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:42:25 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ typedef struct s_list
 {
 	int			*content;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
+
+
 void	push(t_list **src, t_list **dst);
 void	reverse_a(t_list **stack_a);
 void	reverse_b(t_list **stack_b);
