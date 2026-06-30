@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/30 12:23:17 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:50:13 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	rotate_and_push(int r, t_list **s_a, t_list **s_b, t_bench *bench)
 	}
 	while (i < r)
 	{
-		if (reverse)
+		if (reverse == 1)
 			rra(s_a, bench);
 		else
 			ra(s_a, bench);
@@ -83,7 +83,7 @@ void	select_sort(t_list **stack_a, t_bench *bench)
 		rotate_and_push(rotates, stack_a, stack_b, bench);
 	}
 	while ((*stack_b))
-		pb(stack_a, stack_b, bench);
+		pa(stack_a, stack_b, bench);
 }
 
 int main(void)
