@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:03:31 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/29 11:56:20 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:45:14 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	rotate(t_list **stack)
 	t_list	*buffer;
 
 	if (!stack || !(*stack) || !((*stack)->next))
-		return (NULL);
+		return ;
 	buffer = *stack;
 	(*stack) = (*stack)->next;
 	buffer->next = NULL;

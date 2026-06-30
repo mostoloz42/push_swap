@@ -6,24 +6,20 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/29 12:49:42 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:23:17 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	optimize_path(int rotates, int stack_size)
+static int	optimize_path(int rotates, int stack_size)
 {
 	if (rotates > stack_size / 2)
-	//si los rotates son mas que la mitad del tamaño del stack es que es mas eficiente hacer reverse rotates
-	{
-		//si se devuelve un numero negativo hacer tantos reverse rotates como el valor absoluto de lo que se devuelve
-	}
-	//si se devuelve un numero positivo hacer esos rotates normales
-	
+		rotates = -(stack_size - rotates);
+	return (rotates);
 }
 
-int	rotates_until_min(t_list **stack_a)
+static int	rotates_until_min(t_list **stack_a)
 {
 	int		min;
 	int		index;
@@ -36,7 +32,7 @@ int	rotates_until_min(t_list **stack_a)
 	buffer_node = (*stack_a);
 	min = buffer_node->content;
 	buffer_node = buffer_node->next;
-	stack_size = ft_lstsize(stack_a);
+	stack_size = ft_lstsize(*stack_a);
 	while (index < stack_size && buffer_node != NULL)
 	{
 		if (buffer_node->content < min)
@@ -47,25 +43,65 @@ int	rotates_until_min(t_list **stack_a)
 		buffer_node = buffer_node->next;
 		index++;
 	}
-	return(optimize_path(rotates, stack_size));
+	free(buffer_node);
+	return (optimize_path(rotates, stack_size));
 }
 
-t_list	**select_sort(t_list **stack_a, t_bench *bench)
+static void	rotate_and_push(int r, t_list **s_a, t_list **s_b, t_bench *bench)
+{
+	int	reverse;
+	int	i;
+
+	i = 0;
+	reverse = 0;
+	if (r < 0)
+	{
+		r = r * -1;
+		reverse = 1;
+	}
+	while (i < r)
+	{
+		if (reverse)
+			rra(s_a, bench);
+		else
+			ra(s_a, bench);
+		i++;
+	}
+	pb(s_a, s_b, bench);
+}
+
+void	select_sort(t_list **stack_a, t_bench *bench)
 {
 	t_list	**stack_b;
-	t_list	*min_node;
-	t_list	*current_node;
+	int		rotates;
 
-	while (current_node)
+	stack_b = malloc(sizeof(t_list *));
+	rotates = 0;
+	while ((*stack_a)->next)
 	{
-		current_node = *stack_a;
-		min_node = current_node;
-		ra(stack_a, bench);
-		while ((*stack_a)->content != current_node->content)
-		{
-			if (((*stack_a)->content) < min_node->content)
-				min_node = (*stack_a);
-			ra(stack_a, bench);
-		}
+		rotates = rotates_until_min(stack_a);
+		rotate_and_push(rotates, stack_a, stack_b, bench);
+	}
+	while ((*stack_b))
+		pb(stack_a, stack_b, bench);
+}
+
+int main(void)
+{
+	t_list **stack_a;
+	t_bench *bench;
+
+	stack_a = malloc(sizeof(t_list *));
+	bench = malloc(sizeof(t_bench));
+	ft_lstadd_back(stack_a, ft_lstnew(5));
+	ft_lstadd_back(stack_a, ft_lstnew(2));
+	ft_lstadd_back(stack_a, ft_lstnew(3));
+	ft_lstadd_back(stack_a, ft_lstnew(1));
+	ft_lstadd_back(stack_a, ft_lstnew(4));
+	select_sort(stack_a, bench);
+	while((*stack_a))
+	{
+		ft_printf("%d\n", (*stack_a)->content);
+		(*stack_a) = (*stack_a)->next;
 	}
 }

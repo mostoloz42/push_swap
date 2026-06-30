@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:40:19 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/29 12:03:51 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:44:48 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	rrb(t_list **stack_b, t_bench *bench)
 
 void	rrr(t_list **stack_a, t_list **stack_b, t_bench *bench)
 {
-	rotate(stack_a);
-	rotate(stack_b);
+	reverse(stack_a);
+	reverse(stack_b);
 	ft_printf("rrr\n");
 	bench->rrr += 1;
 	bench->total += 1;

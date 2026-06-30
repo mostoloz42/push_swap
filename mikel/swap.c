@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 10:45:01 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/29 11:54:34 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:52:21 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	swap(t_list **stack)
 	t_list	*buffer_b;
 
 	if (!stack || !(*stack) || !((*stack)->next))
-		return (NULL);
+		return ;
 	buffer_a = *stack;
 	buffer_b = (*stack)-> next;
 	(*stack)-> next = buffer_b -> next;

@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/29 12:12:13 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:39:56 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ void	rr(t_list **stack_a, t_list **stack_b, t_bench *bench);
 void	rra(t_list **stack_a, t_bench *bench);
 void	rrb(t_list **stack_b, t_bench *bench);
 void	rrr(t_list **stack_a, t_list **stack_b, t_bench *bench);
+float	calculate_disorder(int *stack);
+int		validate_input(int	*input_list);
 
 #endif
