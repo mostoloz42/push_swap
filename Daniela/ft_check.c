@@ -15,7 +15,7 @@ void	ft_check(int argc, char *argv)
 	}
 	while (j < argc)
 	{
-		tem = argv[i][z];
+		tem = argv[i][j];
 		i++;
 		j++;
 	}
