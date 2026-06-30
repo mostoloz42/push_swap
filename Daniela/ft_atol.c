@@ -1,10 +1,26 @@
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_min_max(long result)
 {
-	int	count;
-	int	result;
-	int	sign;
+	if (result > 2147483647 || result < -2147483648)
+		return (0);
+	return(1);
+}
+
+/* ["1234", "1234","1234","1234","1234","1234"]
+[1234, 243, 43 , 515, 143213241234123412341234]
+
+long arr
+
+arr to lst
+is_overflow? = free a todo, exit (write erroor 2)
+is_duplicate? = free a todo, exit (write erroor 2) */
+
+long	ft_atol(const char *str)
+{
+	long	count;
+	long	result;
+	long	sign;
 
 	count = 0;
 	result = 0;
@@ -23,8 +39,11 @@ int	ft_atoi(const char *str)
 		result = (result * 10) + (str[count] - '0');
 		count++;
 	}
-	return (result * sign);
+	result = result * sign;
+	ft_min_max(result);
+	return (result);
 }
+
 
 /*
 #include <stdio.h>
