@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/01 15:07:45 by francysa          #+#    #+#             */
+/*   Updated: 2026/07/01 15:10:59 by francysa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static size_t	ft_strlen(const char *s)
@@ -10,11 +22,11 @@ static size_t	ft_strlen(const char *s)
 	return (count);
 }
 
-static char    *ft_substr(char const *s, unsigned int start, size_t len)
+static char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t    count;
-	char    *ptr;
-	size_t    longitud_s;
+	size_t	count;
+	char	*ptr;
+	size_t	longitud_s;
 
 	if (!s)
 		return (0);
@@ -109,7 +121,6 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_fill(res, s, c));
 }
-
 
 /* #include <stdio.h>
 

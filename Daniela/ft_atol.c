@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/01 15:06:31 by francysa          #+#    #+#             */
+/*   Updated: 2026/07/01 15:06:57 by francysa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 long	ft_min_max(long result)
 {
 	if (result > 2147483647 || result < -2147483648)
 		return (0);
-	return(1);
+	return (1);
 }
 
 long	ft_atol(const char *str)
@@ -34,7 +46,6 @@ long	ft_atol(const char *str)
 	ft_min_max(result);
 	return (result);
 }
-
 
 /*
 #include <stdio.h>

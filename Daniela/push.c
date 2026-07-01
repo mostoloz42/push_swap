@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse.c                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/22 10:48:14 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/01 15:14:04 by francysa         ###   ########.fr       */
+/*   Created: 2026/07/01 15:12:31 by francysa          #+#    #+#             */
+/*   Updated: 2026/07/01 15:14:32 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	reverse_a(t_list **stack_a)
+void	push(t_list **src, t_list **dst)
 {
-	t_list	*ultimo;
+	t_list	*nodo_one;
 
-	if (!stack_a || !*stack_a || !(*stack_a)->next)
+	if (!src || !*src)
 		return ;
-	ultimo = *stack_a;
-	while (ultimo->next != NULL)
-	{
-		ultimo = ultimo->next;
-	}
-	ultimo->prev->next = NULL;
-	ultimo->next = *stack_a;
-	(*stack_a)->prev = ultimo;
-	ultimo->prev = NULL;
-	*stack_a = ultimo;
-}
-
-void	reverse_b(t_list **stack_b)
-{
-	t_list	*ultimo;
-
-	if (!stack_b || !*stack_b || !(*stack_b)->next)
-		return ;
-	ultimo = *stack_b;
-	while (ultimo->next != NULL)
-	{
-		ultimo = ultimo->next;
-	}
-	ultimo->prev->next = NULL;
-	ultimo->next = *stack_b;
-	(*stack_b)->prev = ultimo;
-	ultimo->prev = NULL;
-	*stack_b = ultimo;
-}
-
-void	reverse(t_list **stack_a, t_list **stack_b)
-{
-	reverse_a(stack_a);
-	reverse_b(stack_b);
+	nodo_one = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	nodo_one->next = *dst;
+	nodo_one->prev = NULL;
+	if (*dst)
+		(*dst)->prev = nodo_one;
+	*dst = nodo_one;
 }
 
 /* int	main(void)
@@ -85,26 +60,18 @@ void	reverse(t_list **stack_a, t_list **stack_b)
 	{
 		printf("[%d] -> ", *(aux->content));
 		aux = aux->next;
-	} 
-	reverse(&stack_a, &stack_b); //Probar revers
-	printf("\nDespues\n");
-	
-	aux = stack_a;
-	printf("Stack A: ");
-	while (aux != NULL)
-	{
-		printf("[%d] -> ", *(aux->content));
-		aux = aux->next;
 	}
-	printf("NULL\n");
-
-	printf("Stack B: ");
+	printf("\nStack B: ");
 	aux = stack_b;
 	while (aux != NULL)
 	{
 		printf("[%d] -> ", *(aux->content));
 		aux = aux->next;
 	}
-	printf("NULL\n");
+ 	push(&stack_a, &stack_b); // probar push
+	
+	printf("\nDespues\n");
+	printf("Nuevo primero de B: %d\n", *(stack_b->content));
+	printf("Nuevo primero de A: %d\n", *(stack_a->content));
 	return (0);
 } */
