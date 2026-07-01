@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:45:11 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/30 10:52:32 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/01 10:28:41 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 static void	push(t_list **src, t_list **dst)
 {
-	t_list	*nodo_one;
+	t_list	*node_to_push;
 
-	if (!src || !*dst)
+	if (!src)
 		return ;
-	nodo_one = *dst;
-	*dst = (*dst)->next;
-	nodo_one->next = *src;
-	*src = nodo_one;
+	node_to_push = *src;
+	*src = (*src)->next;
+	ft_lstadd_front(dst, node_to_push);
 }
 
 void	pa(t_list **stack_a, t_list **stack_b, t_bench *bench)

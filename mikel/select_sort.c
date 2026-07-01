@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/30 12:50:13 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/01 10:50:59 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	rotates_until_min(t_list **stack_a)
 	int		stack_size;
 	t_list	*buffer_node;
 
-	index = 0;
+	index = 1;
 	rotates = 0;
 	buffer_node = (*stack_a);
 	min = buffer_node->content;
@@ -86,7 +86,7 @@ void	select_sort(t_list **stack_a, t_bench *bench)
 		pa(stack_a, stack_b, bench);
 }
 
-int main(void)
+/*  int main(void)
 {
 	t_list **stack_a;
 	t_bench *bench;
@@ -104,4 +104,4 @@ int main(void)
 		ft_printf("%d\n", (*stack_a)->content);
 		(*stack_a) = (*stack_a)->next;
 	}
-}
+}  */
