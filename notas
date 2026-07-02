@@ -1,6 +1,0 @@
-mikel:
-	- simple: selection sort
-		medium: chunks?
-		complex: radix?
-	- hacer las listas circulares haria mucho mas sencillo la operacion de rotar
-	- select sort: rotar hasta encontrar el minimo y cambiarlo por la posicion que toque???

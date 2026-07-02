@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cheks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/01 16:45:38 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/02 10:08:10 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n) //libft
 	return ((unsigned char)s1[count] - (unsigned char)s2[count]);
 }
 
+
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -130,3 +131,4 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
