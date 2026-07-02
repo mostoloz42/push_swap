@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 09:58:42 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/05/13 12:35:16 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:10:01 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(int))
 {
 	if (lst && del)
 	{

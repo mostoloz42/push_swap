@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 10:48:04 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/25 10:51:37 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:38:20 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_calloc(size_t num, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(int));
+void	ft_lstclear(t_list **lst, void (*del)(int));
+void	ft_lstiter(t_list *lst, void (*f)(int));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_write_num_rev(int index, char *buffer);
@@ -74,7 +74,7 @@ char	*ft_strchr(const char *str, int chr);
 char	*ft_strdup(const char *s);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, int(*f)(int), void (*del)(int));
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 

@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 10:04:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/24 12:14:52 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:44:36 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	**create_list(int	*int_list)
 	if (!int_list || !validate_input(int_list))
 		return (NULL);
 	index = 1;
-	*stack = ft_lstnew(int_list[0]);
+	stack = malloc(sizeof(t_list *));
 	while (int_list[index])
 	{
 		ft_lstadd_back(stack, ft_lstnew(int_list[index]));
