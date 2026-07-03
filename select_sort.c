@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 12:20:13 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/03 10:09:30 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	select_sort(t_list **stack_a, t_bench *bench)
 	while ((*stack_b))
 		pa(stack_a, stack_b, bench);
 }
-
-/*	int main(void)
+/*
+	int main(void)
 {
 	t_list **stack_a;
 	t_bench *bench;
@@ -104,4 +104,5 @@ void	select_sort(t_list **stack_a, t_bench *bench)
 		ft_printf("%d\n", (*stack_a)->content);
 		(*stack_a) = (*stack_a)->next;
 	}
-}  */
+}
+	*/

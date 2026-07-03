@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/02 12:21:06 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/03 10:09:31 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	ft_check(int argc, char **argv)
 	return (1);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
@@ -110,5 +110,4 @@ int	main(int argc, char **argv)
 	else
 		ft_printf("Error\n");
 	return (0);
-}
-
+}*/
