@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_list.c                                      :+:      :+:    :+:   */
+/*   select_intermedio.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 10:04:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/06 17:53:15 by francysa         ###   ########.fr       */
+/*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
+/*   Updated: 2026/07/06 16:32:28 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	**create_list(int	*int_list)
+int	indexacion(int *stack)
 {
-	int		index;
-	t_stack	**stack;
+	
+}
 
-	if (!int_list || !validate_input(int_list))
-		return (NULL);
-	index = 1;
-	stack = malloc(sizeof(t_stack *));
-	while (int_list[index])
-	{
-		ft_lstadd_back_t(stack, ft_lstnew_t(int_list[index]));
-		index++;
-	}
-	return (stack);
+int	select_intermedio(t_list **stack_a)
+{
+	
 }

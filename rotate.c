@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:03:31 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 10:36:03 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/06 17:36:10 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_list **stack)
+static void	rotate(t_stack **stack)
 {
-	t_list	*nuevo;
-	t_list	*ultimo;
+	t_stack	*nuevo;
+	t_stack	*ultimo;
 
 	if (!stack || !(*stack) || !((*stack)->next))
 		return ;
@@ -32,7 +32,7 @@ static void	rotate(t_list **stack)
 	*stack = nuevo;
 }
 
-void	ra(t_list **stack_a, t_bench *bench)
+void	ra(t_stack **stack_a, t_bench *bench)
 {
 	rotate(stack_a);
 	ft_printf("ra\n");
@@ -40,7 +40,7 @@ void	ra(t_list **stack_a, t_bench *bench)
 	bench->total += 1;
 }
 
-void	rb(t_list **stack_b, t_bench *bench)
+void	rb(t_stack **stack_b, t_bench *bench)
 {
 	rotate(stack_b);
 	ft_printf("rb\n");
@@ -48,7 +48,7 @@ void	rb(t_list **stack_b, t_bench *bench)
 	bench->total += 1;
 }
 
-void	rr(t_list **stack_a, t_list **stack_b, t_bench *bench)
+void	rr(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	rotate(stack_a);
 	rotate(stack_b);

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:45:11 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 11:00:55 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/06 17:32:38 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_list **src, t_list **dst)
+void	push(t_stack **src, t_stack **dst)
 {
-	t_list	*nodo_one;
+	t_stack	*nodo_one;
 
 	if (!src || !*src)
 		return ;
@@ -22,10 +22,10 @@ void	push(t_list **src, t_list **dst)
 	*src = (*src)->next;
 	if (*src)
 		(*src)->prev = NULL;
-	ft_lstadd_front(dst, nodo_one);
+	ft_lstadd_front_t(dst, nodo_one);
 }
 
-void	pa(t_list **stack_a, t_list **stack_b, t_bench *bench)
+void	pa(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	push(stack_b, stack_a);
 	ft_printf("pa\n");
@@ -33,7 +33,7 @@ void	pa(t_list **stack_a, t_list **stack_b, t_bench *bench)
 	bench->total += 1;
 }
 
-void	pb(t_list **stack_a, t_list **stack_b, t_bench *bench)
+void	pb(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	push(stack_a, stack_b);
 	ft_printf("pb\n");
