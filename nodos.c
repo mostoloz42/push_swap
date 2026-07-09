@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:28:25 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/06 18:06:19 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/07 16:28:35 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ int	ft_lstsize_t(t_stack *lst)
 	counter = 0;
 	if (!lst)
 		return (0);
-	while (lst -> next)
+	while (lst)
 	{
 		counter++;
 		lst = lst -> next;
 	}
-	return (counter + 1);
+	return (counter);
 }
 
 void	ft_lstadd_back_t(t_stack **lst, t_stack *new)
@@ -74,5 +74,6 @@ t_stack	*ft_lstnew_t(int content)
 		return (NULL);
 	element -> content = content;
 	element -> next = NULL;
+	element -> prev = NULL;
 	return (element);
 }

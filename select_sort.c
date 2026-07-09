@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/06 17:58:28 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/07 16:41:24 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static int	rotates_until_min(t_stack **stack_a)
 		buffer_node = buffer_node->next;
 		index++;
 	}
-	free(buffer_node);
 	return (optimize_path(rotates, stack_size));
 }
 
@@ -72,18 +71,18 @@ static void	rotate_and_push(int r, t_stack **s_a, t_stack **s_b, t_bench *bench)
 
 void	select_sort(t_stack **stack_a, t_bench *bench)
 {
-	t_stack	**stack_b;
+	t_stack	*stack_b;
 	int		rotates;
 
-	stack_b = malloc(sizeof(t_stack *));
+	stack_b = NULL;
 	rotates = 0;
-	while ((*stack_a)->next)
+	while (*stack_a && (*stack_a)->next)
 	{
 		rotates = rotates_until_min(stack_a);
-		rotate_and_push(rotates, stack_a, stack_b, bench);
+		rotate_and_push(rotates, stack_a, &stack_b, bench);
 	}
-	while ((*stack_b))
-		pa(stack_a, stack_b, bench);
+	while (stack_b)
+		pa(stack_a, &stack_b, bench);
 }
 
 /* int main(void)
@@ -93,15 +92,15 @@ void	select_sort(t_stack **stack_a, t_bench *bench)
 
 	stack_a = malloc(sizeof(t_stack *));
 	bench = malloc(sizeof(t_bench));
-	ft_lstadd_back(stack_a, ft_lstnew(5));
-	ft_lstadd_back(stack_a, ft_lstnew(2));
-	ft_lstadd_back(stack_a, ft_lstnew(8));
-	ft_lstadd_back(stack_a, ft_lstnew(1));
-	ft_lstadd_back(stack_a, ft_lstnew(6));
+	ft_lstadd_back_t(stack_a, ft_lstnew_t(1));
+	ft_lstadd_back_t(stack_a, ft_lstnew_t(2));
+	ft_lstadd_back_t(stack_a, ft_lstnew_t(3));
+	ft_lstadd_back_t(stack_a, ft_lstnew_t(4));
+	ft_lstadd_back_t(stack_a, ft_lstnew_t(5));
 	select_sort(stack_a, bench);
 	while((*stack_a))
 	{
-		ft_printf("%d\n", (*stack_a)->content);
+		printf("%d\n", (*stack_a)->content);
 		(*stack_a) = (*stack_a)->next;
 	}
 } */

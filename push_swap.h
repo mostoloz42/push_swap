@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/06 18:03:02 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/09 10:09:30 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ typedef struct s_bench
 typedef struct t_stack
 {
 	int				content;
+	int				index;
 	struct t_stack	*next;
 	struct t_stack	*prev;
 }					t_stack;
 
-t_stack	**create_list(int	*int_list);
+t_stack	**create_list(int	*int_list, int size);
 void	pa(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void	pb(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void	sa(t_stack **stack_a, t_bench *bench);
@@ -62,12 +63,17 @@ int		validate_input(int	*input_list);
 int		ft_flags(char *argv);
 int		ft_is_number(char *str);
 int		ft_manejo_flags(char *argv);
-int		ft_check(int argc, char **argv);
+int		*ft_check(int argc, char **argv, int *cuenta_numeros);
 long	ft_min_max(long result);
 void	ft_lstadd_front_t(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast_t(t_stack *lst);
-int	ft_lstsize_t(t_stack *lst);
+int		ft_lstsize_t(t_stack *lst);
 void	ft_lstadd_back_t(t_stack **lst, t_stack *new);
 t_stack	*ft_lstnew_t(int content);
+void	select_sort(t_stack **stack_a, t_bench *bench);
+void	indexacion(t_stack *stack_a);
+int		ft_sqrt(int nb);
+void	chuncks(t_stack **stack_a, t_bench *bench);
+int		ft_sqrt_aux(t_stack *stack_a);
 
 #endif

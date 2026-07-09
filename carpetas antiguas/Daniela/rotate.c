@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:03:31 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/01 18:01:06 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:31:26 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rotate_a(t_list **stack_a)
 	*stack_a = nuevo;
 }
 
-/* int	main(void)
+int	main(void)
 {
 	int val1 = 1, val2 = 2, val3 = 3, val4 = 4;
 	
@@ -64,6 +64,5 @@ void	rotate_a(t_list **stack_a)
 		printf("[%d] -> ", *(aux->content));
 		aux = aux->next;
 	}
-	printf("NULL\n");
 	return (0);
-}  */
+} 
