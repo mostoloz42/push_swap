@@ -6,35 +6,30 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 11:03:55 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/09 11:36:34 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/10 16:46:54 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	chuncks(t_stack **stack_a, t_bench *bench)
+void	indexacion(t_stack *stack_a)
 {
-	t_stack	**stack_b;
 	t_stack	*nodo_actual;
-	int	j;
-	int	limite_inferior;
-	int	limite_superior;
+	t_stack	*nodo;
+	int		i;
 
-	stack_b = malloc(sizeof(t_list *));
-	j = ft_sqrt_aux(*stack_a);
-	indexacion(*stack_a);
-	limite_inferior = 0;
-	limite_superior = j;
-	nodo_actual = *stack_a;
-	while (nodo_actual)
+	nodo_actual = stack_a;
+	while (nodo_actual != NULL)
 	{
-		if (nodo_actual->index <= j)
+		nodo = stack_a;
+		i = 0;
+		while (nodo != NULL)
 		{
-			pb(stack_a, stack_b, bench);
-			if (nodo_actual->index <= (j / 2))
-				rb(stack_b, bench);
+			if (nodo_actual->content > nodo->content)
+				i++;
+			nodo = nodo->next;
 		}
-		nodo_actual = *stack_a;
-		ra(stack_a, bench);
+		nodo_actual->index = i;
+		nodo_actual = nodo_actual->next;
 	}
 }

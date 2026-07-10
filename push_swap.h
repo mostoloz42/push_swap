@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/09 10:09:30 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/10 17:07:59 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,9 @@ void	ft_lstadd_back_t(t_stack **lst, t_stack *new);
 t_stack	*ft_lstnew_t(int content);
 void	select_sort(t_stack **stack_a, t_bench *bench);
 void	indexacion(t_stack *stack_a);
-int		ft_sqrt(int nb);
-void	chuncks(t_stack **stack_a, t_bench *bench);
-int		ft_sqrt_aux(t_stack *stack_a);
+int		ft_sqrt(t_stack *stack_a);
+void	chuncks_prueba(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+int	es_del_chunk(t_stack *nodo, int min_lim, int max_lim);
+void	find_positions(t_stack *stack_a, int min, int max, int *arriba, int *abajo);
 
 #endif

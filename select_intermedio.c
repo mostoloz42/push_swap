@@ -6,124 +6,119 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/09 11:34:42 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/10 17:13:42 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sqrt(int nb)
+static int	indice_max_stack_b(t_stack *stack_b)
 {
-	int	i;
+	int	max;
 
-	if (nb < 1)
-		return (0);
-	i = 1;
-	while (i * i <= nb)
+	if (!stack_b)
+		return (-1);
+	max = stack_b->index;
+	while (stack_b != NULL)
 	{
-		if (i * i == nb)
-			return (i);
-		i++;
+		if (stack_b->index > max)
+			max = stack_b->index;
+		stack_b = stack_b->next;
 	}
-	return (i - 1);
+	return (max);
 }
 
-int	ft_sqrt_aux(t_stack *stack_a)
+static int	posicion_indice(t_stack *stack, int target_index)
 {
-	t_stack	*nodo;
-	int	i;
-	int	j;
-	
-	nodo = stack_a;
-	i = 0;
-	while(nodo->next != NULL)
+	int	pos;
+
+	pos = 0;
+	while (stack != NULL)
 	{
-		i++;
-		nodo = nodo->next;
+		if (stack->index == target_index)
+			return (pos);
+		pos++;
+		stack = stack->next;
 	}
-	j = ft_sqrt(i);
-	return (j);
+	return (-1);
 }
 
-void	chuncks(t_stack **stack_a, t_bench *bench)
+static void	rotate_and_push(t_stack **sa, t_stack **sb, int pos_arriba,
+				int pos_abajo, t_bench *bench)
 {
-	t_stack	**stack_b;
-	t_stack	*nodo_actual;
-	int	j;
+	int	size_a;
+	int	coste_rra;
 
-	stack_b = malloc(sizeof(t_list *));
-	j = ft_sqrt_aux(*stack_a);
-	indexacion(*stack_a);
-	nodo_actual = *stack_a;
-	while (nodo_actual)
+	size_a = ft_lstsize_t(*sa);
+	if (pos_arriba <= (size_a - pos_abajo))
 	{
-		if (nodo_actual->index <= j)
+		while (pos_arriba-- > 0)
+			ra(sa, bench);
+	}
+	else
+	{
+		coste_rra = size_a - pos_abajo;
+		while (coste_rra-- > 0)
+			rra(sa, bench);
+	}
+	pb(sa, sb, bench);
+}
+
+static void	push_back_to_a(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
+{
+	int	size_b;
+	int	pos_max;
+	int	target_max;
+	int	coste_rrb;
+
+	while (*stack_b != NULL)
+	{
+		size_b = ft_lstsize_t(*stack_b);
+		target_max = indice_max_stack_b(*stack_b);
+		pos_max = posicion_indice(*stack_b, target_max);
+		if (pos_max <= size_b / 2)
 		{
-			pb(stack_a, stack_b, bench);
-			if (nodo_actual->index <= (j / 2))
+			while (pos_max-- > 0)
 				rb(stack_b, bench);
 		}
-		nodo_actual = *stack_a;
-		ra(stack_a, bench);
+		else
+		{
+			coste_rrb = size_b - pos_max;
+			while (coste_rrb-- > 0)
+				rrb(stack_b, bench);
+		}
+		pa(stack_a, stack_b, bench);
 	}
 }
 
-/* int	main(void)
+void	chuncks_prueba(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
-	int val1 = 100, val2 = -2, val3 = 30, val4 = 4;
-	
-	t_stack n1, n2, n3, n4;
+	int	min_lim;
+	int	max_lim;
+	int	chunk_size;
+	int	pos_arriba;
+	int	pos_abajo;
 
-	// Stack A
-	n1.content = &val1; n1.next = &n2; n1.prev = NULL;
-	n2.content = &val2; n2.next = &n3; n2.prev = &n1;
-	n3.content = &val3; n3.next = &n4; n3.prev = &n2;
-	n4.content = &val4; n4.next = NULL; n4.prev =&n3;
-	
-	t_stack *stack_a = &n1;
-	t_stack *aux;
-
-	printf("Stack A: ");
-	aux = stack_a;
-	while (aux != NULL)
+	indexacion(*stack_a);
+	chunk_size = ft_sqrt(*stack_a);
+	min_lim = 0;
+	max_lim = chunk_size - 1;
+	while (*stack_a != NULL)
 	{
-		printf("[%d] -> ", *(aux->content));
-		aux = aux->next;
-	}
-	printf("\nDespues\n");
-	aux = stack_a;
-	t_index(aux);
-	while (aux != NULL)
-	{
-		printf("Valor: %d (Index: %d) -> \n", *(aux->content), aux->t_index);
-		aux = aux->next;
-	}
-	return (0);
-} */
-/* void selection_sort(t_stack *stack_a)
-{
-	t_stack	*i;
-	t_stack	*j;
-	t_stack	*min_nodo;
-	int		tem;
-	
-	i = stack_a;
-	while (i != NULL && i->next =! NULL)
-	{
-		min_nodo = i;
-		j = i->next;
-		while (j != NULL)
+		pos_arriba = -1;
+		pos_abajo = -1;
+		find_positions(*stack_a, min_lim, max_lim, &pos_arriba, &pos_abajo);
+		while (pos_arriba != -1)
 		{
-			if(j->content < min_nodo->content)
-			min_nodo = j;
-			j = j->next;
+			rotate_and_push(stack_a, stack_b, pos_arriba, pos_abajo, bench);
+			if (*stack_b && (*stack_b)->index < (min_lim + (chunk_size / 2)))
+				rb(stack_b, bench);
+			pos_arriba = -1;
+			pos_abajo = -1;
+			find_positions(*stack_a, min_lim, max_lim, &pos_arriba, &pos_abajo);
 		}
-		if (min_nodo != i)
-		{
-			tem = i->content;
-			i->content = min_nodo->content;
-			min_nodo->content = tem;
-		}
-		i = i->next;
+		min_lim += chunk_size;
+		max_lim += chunk_size;
 	}
-} */
+	push_back_to_a(stack_a, stack_b, bench);
+}
