@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 10:45:01 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 12:21:51 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/07 15:48:45 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_list **stack)
+void	swap(t_stack **stack)
 {
-	t_list	*buffer_a;
-	t_list	*buffer_b;
+	t_stack	*buffer_a;
+	t_stack	*buffer_b;
 
 	if (!stack || !(*stack) || !((*stack)->next))
 		return ;
@@ -30,27 +30,27 @@ void	swap(t_list **stack)
 	*stack = buffer_b;
 }
 
-void	sa(t_list **stack_a, t_bench *bench)
+void	sa(t_stack **stack_a, t_bench *bench)
 {
 	swap(stack_a);
-	ft_printf("sa\n");
+	printf("sa\n");//ft_printf("sa\n");
 	bench->sa += 1;
 	bench->total += 1;
 }
 
-void	sb(t_list **stack_b, t_bench *bench)
+void	sb(t_stack **stack_b, t_bench *bench)
 {
 	swap(stack_b);
-	ft_printf("sb\n");
+	printf("sb\n");//ft_printf("sb\n");
 	bench->sb += 1;
 	bench->total += 1;
 }
 
-void	ss(t_list **stack_a, t_list **stack_b, t_bench *bench)
+void	ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_printf("ss\n");
+	printf("ss\n"); //ft_printf("ss\n");
 	bench->ss += 1;
 	bench->total += 1;
 }

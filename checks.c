@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/02 12:21:06 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/07 15:33:44 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,14 @@ int	ft_process_split(char **aux, int	*num, int *cuent_num)
 	return (1);
 }
 
-int	ft_check(int argc, char **argv)
+int	*ft_check(int argc, char **argv, int *cuenta_numeros)
 {
 	int		i;
 	char	**aux_split;
 	int		*los_numeros;
-	int		cuenta_numeros;
 
 	i = 1;
-	cuenta_numeros = 0;
+	*cuenta_numeros = 0;
 	los_numeros = malloc(sizeof(int) * argc * 2);
 	if (!los_numeros)
 		return (0);
@@ -92,16 +91,18 @@ int	ft_check(int argc, char **argv)
 		else
 		{
 			aux_split = ft_split(argv[i], ' ');
-			if (ft_process_split(aux_split, los_numeros, &cuenta_numeros) == 0)
-				return (free(los_numeros), 0);
+			if (ft_process_split(aux_split, los_numeros, cuenta_numeros) == 0)
+			{
+				free(los_numeros);
+				return (0);
+			}
 			i++;
 		}
 	}
-	free(los_numeros);
-	return (1);
+	return (los_numeros);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
@@ -110,5 +111,4 @@ int	main(int argc, char **argv)
 	else
 		ft_printf("Error\n");
 	return (0);
-}
-
+}*/
