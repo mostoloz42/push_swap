@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:40:19 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 12:15:46 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/03 10:09:29 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ void	rrr(t_list **stack_a, t_list **stack_b, t_bench *bench)
 	bench->rrr += 1;
 	bench->total += 1;
 }
-

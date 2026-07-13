@@ -86,8 +86,8 @@ void	select_sort(t_list **stack_a, t_bench *bench)
 		pa(stack_a, stack_b, bench);
 	free(stack_b);
 }
-
-/*	int main(void)
+/*
+	int main(void)
 {
 	t_list **stack_a;
 	t_bench *bench;
@@ -105,4 +105,5 @@ void	select_sort(t_list **stack_a, t_bench *bench)
 		ft_printf("%d\n", (*stack_a)->content);
 		(*stack_a) = (*stack_a)->next;
 	}
-}  */
+}
+	*/
