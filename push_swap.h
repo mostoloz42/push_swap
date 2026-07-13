@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 10:18:40 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/13 11:25:43 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	rra(t_list **stack_a, t_bench *bench);
 void	rrb(t_list **stack_b, t_bench *bench);
 void	rrr(t_list **stack_a, t_list **stack_b, t_bench *bench);
 void	ft_free_split(char **aux);
+void	order_three(t_list **stack_a, t_bench *bench);
 long	ft_atol(const char *str);
 long	ft_min_max(long result);
 float	calculate_disorder(int *stack);
