@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:49:39 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/13 12:48:23 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <stdio.h> 
 
 typedef struct s_bench
 {
@@ -57,6 +56,7 @@ void	rrb(t_stack **stack_b, t_bench *bench);
 void	rrr(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void	ft_free_split(char **aux);
 void	sort_three(t_list **stack_a, t_bench *bench);
+void	sort_five(t_stack **stack_a, t_bench *bench, int size);
 long	ft_atol(const char *str);
 long	ft_min_max(long result);
 float	calculate_disorder(int *stack);
