@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 10:13:42 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:31:08 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/13 11:51:23 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_list **stack_a, t_bench *bench)
+void	sort_three(t_stack **stack_a, t_bench *bench)
 {
 	int	a;
 	int	b;

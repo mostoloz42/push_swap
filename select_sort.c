@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:50:34 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/13 11:53:32 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	rotates_until_min(t_stack **stack_a)
 	return (optimize_path(rotates, stack_size));
 }
 
-static void	rotate_and_push(int r, t_stack **s_a, t_stack **s_b, t_bench *bench)
+static void	rotate_and_push(t_stack **s_a, t_stack **s_b, t_bench *bench, int r)
 {
 	int	reverse;
 	int	i;
