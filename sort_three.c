@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order_three.c                                      :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 10:13:42 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:22:54 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/13 11:31:08 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	order_three(t_list **stack_a, t_bench *bench)
+void	sort_three(t_list **stack_a, t_bench *bench)
 {
 	int	a;
 	int	b;
