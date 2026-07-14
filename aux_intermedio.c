@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:52:59 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/10 17:14:05 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/13 12:29:43 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,36 +31,21 @@ int	ft_sqrt(t_stack *stack_a)
 	return (i);
 }
 
-int	es_del_chunk(t_stack *nodo, int min_lim, int max_lim)
+static int	es_del_chunk(t_stack *nodo, int *lims)
 {
 	if (!nodo)
 		return (0);
-	if (nodo->index >= min_lim && nodo->index <= max_lim)
+	if (nodo->index >= lims[0] && nodo->index <= lims[1])
 		return (1);
 	return (0);
 }
 
-void	find_positions(t_stack *stack_a, int min, int max, int *arriba, int *abajo) //rellenar arriba y abajo
+static	void	find_positions_down(t_stack *stack_a, int *lims, int *pos)
 {
 	t_stack	*actual;
-	int	i;
-	int	found;
+	int		i;
+	int		found;
 
-	actual = stack_a;
-	i = 0;
-	found = 0;
-	while (actual && !found)
-	{
-		if (es_del_chunk(actual, min, max))
-		{
-			*arriba = i;
-			found = 1;
-		}
-		i++;
-		actual = actual->next;
-	}
-	if(*arriba == -1)
-		return ;
 	actual = stack_a;
 	while (actual && actual->next)
 		actual = actual->next;
@@ -68,12 +53,55 @@ void	find_positions(t_stack *stack_a, int min, int max, int *arriba, int *abajo)
 	found = 0;
 	while (actual && !found)
 	{
-		if (es_del_chunk(actual, min, max))
+		if (es_del_chunk(actual, lims))
 		{
-			*abajo = i;
+			pos[1] = i;
 			found = 1;
 		}
 		i--;
-		actual =actual->prev;
+		actual = actual->prev;
 	}
+}
+
+void	find_positions(t_stack *stack_a, int *lims, int *pos)
+{
+	t_stack	*actual;
+	int		i;
+	int		found;
+
+	actual = stack_a;
+	i = 0;
+	found = 0;
+	while (actual && !found)
+	{
+		if (es_del_chunk(actual, lims))
+		{
+			pos[0] = i;
+			found = 1;
+		}
+		i++;
+		actual = actual->next;
+	}
+	if (pos[0] == -1)
+		return ;
+	else
+	{
+		find_positions_down(stack_a, lims, pos);
+	}
+}
+
+int	indice_max_stack_b(t_stack *stack_b)
+{
+	int	max;
+
+	if (!stack_b)
+		return (-1);
+	max = stack_b->index;
+	while (stack_b != NULL)
+	{
+		if (stack_b->index > max)
+			max = stack_b->index;
+		stack_b = stack_b->next;
+	}
+	return (max);
 }
