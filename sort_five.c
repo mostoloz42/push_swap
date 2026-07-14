@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 11:59:07 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 12:47:06 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 11:02:09 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	sort_five(t_stack **stack_a, t_bench *bench, int size)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
-
 	while ((*stack_a)->index != 0 && (*stack_a))
 		ra(stack_a, bench);
 	pb(stack_a, &stack_b, bench);

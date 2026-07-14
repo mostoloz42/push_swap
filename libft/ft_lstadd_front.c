@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 09:57:18 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 09:58:35 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:16:07 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (new && lst)
 	{
-		new->next = *lst;
-		new->prev = NULL;
-		if (*lst)
-			(*lst)->prev = new;
+		new -> next = *lst;
 		*lst = new;
 	}
 }

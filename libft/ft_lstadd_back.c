@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 09:56:48 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 12:09:58 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:16:33 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		if (ft_lstsize(*lst) > 0)
 		{
 			last_element = ft_lstlast(*lst);
-			new->prev = last_element;
 			last_element -> next = new;
 		}
 		else
