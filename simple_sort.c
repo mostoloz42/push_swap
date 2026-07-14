@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 09:49:19 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:50:33 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	rotate_and_push(t_stack **s_a, t_stack **s_b, t_bench *bench, int r)
 	pb(s_a, s_b, bench);
 }
 
-void	select_sort(t_stack **stack_a, t_bench *bench)
+void	simple_sort(t_stack **stack_a, t_bench *bench)
 {
 	t_stack	*stack_b;
 	int		rotates;
@@ -97,7 +97,7 @@ void	select_sort(t_stack **stack_a, t_bench *bench)
 	ft_lstadd_back_t(stack_a, ft_lstnew_t(3));
 	ft_lstadd_back_t(stack_a, ft_lstnew_t(4));
 	ft_lstadd_back_t(stack_a, ft_lstnew_t(5));
-	select_sort(stack_a, bench);
+	simple_sort(stack_a, bench);
 	while((*stack_a))
 	{
 		printf("%d\n", (*stack_a)->content);

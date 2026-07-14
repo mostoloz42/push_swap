@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/14 12:19:28 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:51:08 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	push_swap(t_stack **stack_a, t_bench *bench)
 
 	stack_b = NULL;
 	indexacion(*stack_a);
-	select_medium(stack_a, &stack_b, bench);
+	medium_sort(stack_a, &stack_b, bench);
 }
 
 int	main(int argc, char **argv)
@@ -53,6 +53,6 @@ int	main(int argc, char **argv)
 	}
 	push_swap(stack_a, bench);
 	/* indexacion(*stack_a);
-	select_medium(stack_a, &stack_b, bench); */
+	medium_sort(stack_a, &stack_b, bench); */
 	return (0);
 }
