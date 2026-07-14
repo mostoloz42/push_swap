@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 11:59:07 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 11:02:09 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:31:59 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,5 @@ void	sort_five(t_stack **stack_a, t_bench *bench, int size)
 	while (stack_b)
 		pa(stack_a, &stack_b, bench);
 }
+n dcn s_bench
+bhyvhvhv
