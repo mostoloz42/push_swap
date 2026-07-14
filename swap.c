@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 10:45:01 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/07 15:48:45 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/13 11:55:46 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	swap(t_stack **stack)
 void	sa(t_stack **stack_a, t_bench *bench)
 {
 	swap(stack_a);
-	printf("sa\n");//ft_printf("sa\n");
+	ft_printf("sa\n");
 	bench->sa += 1;
 	bench->total += 1;
 }
@@ -41,7 +41,7 @@ void	sa(t_stack **stack_a, t_bench *bench)
 void	sb(t_stack **stack_b, t_bench *bench)
 {
 	swap(stack_b);
-	printf("sb\n");//ft_printf("sb\n");
+	ft_printf("sb\n");
 	bench->sb += 1;
 	bench->total += 1;
 }
@@ -50,7 +50,7 @@ void	ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	swap(stack_a);
 	swap(stack_b);
-	printf("ss\n"); //ft_printf("ss\n");
+	ft_printf("ss\n");
 	bench->ss += 1;
 	bench->total += 1;
 }
