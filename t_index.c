@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_list.c                                      :+:      :+:    :+:   */
+/*   t_index.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 10:04:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/07 15:24:11 by francysa         ###   ########.fr       */
+/*   Created: 2026/07/09 08:34:16 by francysa          #+#    #+#             */
+/*   Updated: 2026/07/09 08:56:00 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	**create_list(int	*int_list, int size)
+void	indexacion(t_stack *stack_a)
 {
-	int		index;
-	t_stack	**stack;
+	t_stack	*nodo_actual;
+	t_stack	*nodo;
+	int		i;
 
-	if (!int_list || !validate_input(int_list))
-		return (NULL);
-	stack = malloc(sizeof(t_stack *));
-	if (!stack)
-		return (NULL);
-	*stack = NULL; // Inicializar el ancla de la lista NULL
-	index = 0;
-	while (index < size)
+	nodo_actual = stack_a;
+	while (nodo_actual != NULL)
 	{
-		ft_lstadd_back_t(stack, ft_lstnew_t(int_list[index]));
-		index++;
+		nodo = stack_a;
+		i = 0;
+		while (nodo != NULL)
+		{
+			if (nodo_actual->content > nodo->content)
+				i++;
+			nodo = nodo->next;
+		}
+		nodo_actual->index = i;
+		nodo_actual = nodo_actual->next;
 	}
-	return (stack);
 }

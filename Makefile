@@ -1,26 +1,27 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./includes
+CFLAGS = -Wall -Wextra -Werror -I. -I/includes
 
 LIB_A = ./libft/libft.a
 LIB_DIR = ./libft
 
 SRCS = calculate_disorder.c create_list.c push.c reverse.c rotate.c \
-	select_sort.c swap.c validate_input.c checks.c ft_flags.c free.c\
-	 ft_atol.c sort_three.c ./libft/libft.a
+	select_sort.c swap.c validate_input.c checks.c ft_flags.c free.c \
+	 ft_atol.c nodos.c main.c select_intermedio.c t_index.c aux_intermedio.c \
+	 sort_three.c sort_five.c ./libft/libft.a
 
 OBJS = $(SRCS:.c=.o)
 
-HEADERS = push_swap.h ./libft/libft.h
+HEADERS = push_swap.h $(LIB_DIR)/libft.h
 
 all: $(LIB_A) $(NAME)
 
 $(LIB_A) :
 	$(MAKE) -C $(LIB_DIR) all -s
 
-$(NAME): $(OBJS) $(HEADERS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(LIB_A)
+	$(CC) $(CFLAGS) $(OBJS) $(LIB_A) -o $(NAME)
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@

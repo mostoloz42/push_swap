@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 15:12:31 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/01 15:14:32 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/09 10:02:59 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	push(t_list **src, t_list **dst)
 	*dst = nodo_one;
 }
 
-/* int	main(void)
+int	main(void)
 {
 	int val1 = 1, val2 = 2, val3 = 3, val4 = 4,
 		val5 = 5, val6 = 6, val7 = 7, val8 = 8;
@@ -44,14 +44,14 @@ void	push(t_list **src, t_list **dst)
 	n3.content = &val3; n3.next = &n4; n3.prev = &n2;
 	n4.content = &val4; n4.next = NULL; n4.prev =&n3;
 
-	// Stack B
+/* 	// Stack B
 	n5.content = &val5; n5.next = &n6; n5.prev = NULL;
 	n6.content = &val6; n6.next = &n7; n6.prev = &n5;
 	n7.content = &val7; n7.next = &n8;n7.prev = &n6;
-	n8.content = &val8; n8.next = NULL; n8.prev = &n7;
+	n8.content = &val8; n8.next = NULL; n8.prev = &n7; */
 	
 	t_list *stack_a = &n1;
-	t_list *stack_b = &n5;
+	t_list *stack_b = NULL;
 	t_list *aux;
 
 	printf("Stack A: ");
@@ -68,10 +68,13 @@ void	push(t_list **src, t_list **dst)
 		printf("[%d] -> ", *(aux->content));
 		aux = aux->next;
 	}
- 	push(&stack_a, &stack_b); // probar push
+ 	push(&stack_a, &stack_b);
+	push(&stack_a, &stack_b); 
+	push(&stack_a, &stack_b);
+	push(&stack_a, &stack_b);   // probar push
 	
 	printf("\nDespues\n");
 	printf("Nuevo primero de B: %d\n", *(stack_b->content));
 	printf("Nuevo primero de A: %d\n", *(stack_a->content));
 	return (0);
-} */
+}
