@@ -6,13 +6,13 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/14 10:32:54 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:20:32 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	indice_max_stack_b(t_stack *stack_b)
+int	indice_max_stack_b(t_stack *stack_b)
 {
 	int	max;
 
