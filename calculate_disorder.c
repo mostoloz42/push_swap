@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculate_disorder.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 10:02:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/25 12:34:13 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/13 15:06:51 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

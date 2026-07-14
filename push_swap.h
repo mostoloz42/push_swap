@@ -74,8 +74,8 @@ t_stack	*ft_lstnew_t(int content);
 void	select_sort(t_stack **stack_a, t_bench *bench);
 void	indexacion(t_stack *stack_a);
 int		ft_sqrt(t_stack *stack_a);
-void	chuncks_prueba(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
-int		es_del_chunk(t_stack *nodo, int min_lim, int max_lim);
-void	find_positions(t_stack *stack_a, int min, int max, int *arriba, int *abajo);
+void	select_medium(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void	find_positions(t_stack *stack_a, int *lims, int *pos);
+int		indice_max_stack_b(t_stack *stack_b);
 
 #endif

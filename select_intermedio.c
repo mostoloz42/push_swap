@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/10 17:13:42 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:32:54 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,21 @@ static int	posicion_indice(t_stack *stack, int indice_max)
 	return (-1);
 }
 
-static void	rotate_and_push(t_stack **sa, t_stack **sb, int pos_arriba,
-				int pos_abajo, t_bench *bench)
+static void	rotate_and_push(t_stack **sa, t_stack **sb,
+			int *pos, t_bench *bench)
 {
 	int	size_a;
 	int	coste_rra;
 
 	size_a = ft_lstsize_t(*sa);
-	if (pos_arriba <= (size_a - pos_abajo))
+	if (pos[0] <= (size_a - pos[1]))
 	{
-		while (pos_arriba-- > 0)
+		while (pos[0]-- > 0)
 			ra(sa, bench);
 	}
 	else
 	{
-		coste_rra = size_a - pos_abajo;
+		coste_rra = size_a - pos[1];
 		while (coste_rra-- > 0)
 			rra(sa, bench);
 	}
@@ -91,34 +91,31 @@ static void	push_back_to_a(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 	}
 }
 
-void	chuncks_prueba(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
+void	select_medium(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
-	int	min_lim;
-	int	max_lim;
+	int	lims[2];
+	int	pos[2];
 	int	chunk_size;
-	int	pos_arriba;
-	int	pos_abajo;
 
-	indexacion(*stack_a);
 	chunk_size = ft_sqrt(*stack_a);
-	min_lim = 0;
-	max_lim = chunk_size - 1;
+	lims[0] = 0;
+	lims[1] = chunk_size - 1;
 	while (*stack_a != NULL)
 	{
-		pos_arriba = -1;
-		pos_abajo = -1;
-		find_positions(*stack_a, min_lim, max_lim, &pos_arriba, &pos_abajo);
-		while (pos_arriba != -1)
+		pos[0] = -1;
+		pos[1] = -1;
+		find_positions(*stack_a, lims, pos);
+		while (pos[0] != -1)
 		{
-			rotate_and_push(stack_a, stack_b, pos_arriba, pos_abajo, bench);
-			if (*stack_b && (*stack_b)->index < (min_lim + (chunk_size / 2)))
+			rotate_and_push(stack_a, stack_b, pos, bench);
+			if (*stack_b && (*stack_b)->index < (lims[0] + (chunk_size / 2)))
 				rb(stack_b, bench);
-			pos_arriba = -1;
-			pos_abajo = -1;
-			find_positions(*stack_a, min_lim, max_lim, &pos_arriba, &pos_abajo);
+			pos[0] = -1;
+			pos[1] = -1;
+			find_positions(*stack_a, lims, pos);
 		}
-		min_lim += chunk_size;
-		max_lim += chunk_size;
+		lims[0] += chunk_size;
+		lims[1] += chunk_size;
 	}
 	push_back_to_a(stack_a, stack_b, bench);
 }
