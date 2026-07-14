@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 12:48:23 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:09:42 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	rra(t_stack **stack_a, t_bench *bench);
 void	rrb(t_stack **stack_b, t_bench *bench);
 void	rrr(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void	ft_free_split(char **aux);
-void	sort_three(t_list **stack_a, t_bench *bench);
+void	sort_three(t_stack **stack_a, t_bench *bench);
 void	sort_five(t_stack **stack_a, t_bench *bench, int size);
 long	ft_atol(const char *str);
 long	ft_min_max(long result);
@@ -75,7 +75,7 @@ void	select_sort(t_stack **stack_a, t_bench *bench);
 void	indexacion(t_stack *stack_a);
 int		ft_sqrt(t_stack *stack_a);
 void	chuncks_prueba(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
-int	es_del_chunk(t_stack *nodo, int min_lim, int max_lim);
+int		es_del_chunk(t_stack *nodo, int min_lim, int max_lim);
 void	find_positions(t_stack *stack_a, int min, int max, int *arriba, int *abajo);
 
 #endif

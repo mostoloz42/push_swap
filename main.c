@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/10 16:49:34 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:09:20 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ int	main(int argc, char **argv)
 	los_numeros = ft_check(argc, argv, &cuenta_numeros);
 	if (!los_numeros)
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		free(bench); // Liberamos bench para evitar leaks si falla la validación
 		return (1);
 	}
 	stack_a = create_list(los_numeros, cuenta_numeros);
+	indexacion(*stack_a);
 	free(los_numeros);
 	if (!stack_a)
 	{

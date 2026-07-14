@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:53:32 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 09:49:19 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	select_sort(t_stack **stack_a, t_bench *bench)
 	while (*stack_a && (*stack_a)->next)
 	{
 		rotates = rotates_until_min(stack_a);
-		rotate_and_push(rotates, stack_a, &stack_b, bench);
+		rotate_and_push(stack_a, &stack_b, bench, rotates);
 	}
 	while (stack_b)
 		pa(stack_a, &stack_b, bench);
