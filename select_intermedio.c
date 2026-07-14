@@ -6,20 +6,36 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/13 12:21:28 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:32:54 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	posicion_indice(t_stack *stack, int target_index)
+static int	indice_max_stack_b(t_stack *stack_b)
+{
+	int	max;
+
+	if (!stack_b)
+		return (-1);
+	max = stack_b->index;
+	while (stack_b != NULL)
+	{
+		if (stack_b->index > max)
+			max = stack_b->index;
+		stack_b = stack_b->next;
+	}
+	return (max);
+}
+
+static int	posicion_indice(t_stack *stack, int indice_max)
 {
 	int	pos;
 
 	pos = 0;
 	while (stack != NULL)
 	{
-		if (stack->index == target_index)
+		if (stack->index == indice_max)
 			return (pos);
 		pos++;
 		stack = stack->next;
@@ -52,14 +68,14 @@ static void	push_back_to_a(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	int	size_b;
 	int	pos_max;
-	int	target_max;
+	int	indice_max;
 	int	coste_rrb;
 
 	while (*stack_b != NULL)
 	{
 		size_b = ft_lstsize_t(*stack_b);
-		target_max = indice_max_stack_b(*stack_b);
-		pos_max = posicion_indice(*stack_b, target_max);
+		indice_max = indice_max_stack_b(*stack_b);
+		pos_max = posicion_indice(*stack_b, indice_max);
 		if (pos_max <= size_b / 2)
 		{
 			while (pos_max-- > 0)
