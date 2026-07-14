@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 09:59:57 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/30 12:36:30 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 10:44:53 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, int(*f)(int), void (*del)(int))
 		if (!new_node)
 		{
 			del(new_content);
-			ft_lstclear(&new_list, del);
+			ft_lstclear(&new_list);
 			return (NULL);
 		}
 		ft_lstadd_back(&new_list, new_node);
