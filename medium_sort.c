@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   select_intermedio.c                                :+:      :+:    :+:   */
+/*   medium_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/14 12:20:32 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:49:16 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	indice_max_stack_b(t_stack *stack_b)
-{
-	int	max;
-
-	if (!stack_b)
-		return (-1);
-	max = stack_b->index;
-	while (stack_b != NULL)
-	{
-		if (stack_b->index > max)
-			max = stack_b->index;
-		stack_b = stack_b->next;
-	}
-	return (max);
-}
 
 static int	posicion_indice(t_stack *stack, int indice_max)
 {
@@ -91,7 +75,7 @@ static void	push_back_to_a(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 	}
 }
 
-void	select_medium(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
+void	medium_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	int	lims[2];
 	int	pos[2];

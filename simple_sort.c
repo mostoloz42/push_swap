@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   select_sort.c                                      :+:      :+:    :+:   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 09:49:19 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/14 12:50:24 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	rotate_and_push(t_stack **s_a, t_stack **s_b, t_bench *bench, int r)
 	pb(s_a, s_b, bench);
 }
 
-void	select_sort(t_stack **stack_a, t_bench *bench)
+void	simple_sort(t_stack **stack_a, t_bench *bench)
 {
 	t_stack	*stack_b;
 	int		rotates;
