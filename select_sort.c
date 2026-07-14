@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   select_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/07 16:41:24 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/14 09:49:19 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	rotates_until_min(t_stack **stack_a)
 	return (optimize_path(rotates, stack_size));
 }
 
-static void	rotate_and_push(int r, t_stack **s_a, t_stack **s_b, t_bench *bench)
+static void	rotate_and_push(t_stack **s_a, t_stack **s_b, t_bench *bench, int r)
 {
 	int	reverse;
 	int	i;
@@ -79,7 +79,7 @@ void	select_sort(t_stack **stack_a, t_bench *bench)
 	while (*stack_a && (*stack_a)->next)
 	{
 		rotates = rotates_until_min(stack_a);
-		rotate_and_push(rotates, stack_a, &stack_b, bench);
+		rotate_and_push(stack_a, &stack_b, bench, rotates);
 	}
 	while (stack_b)
 		pa(stack_a, &stack_b, bench);

@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 10:48:04 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/02 09:51:30 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:23:57 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_calloc(size_t num, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_lstdelone(t_list *lst, void (*del)(int));
-void	ft_lstclear(t_list **lst, void (*del)(int));
+void	ft_lstdelone(t_list *lst);
+void	ft_lstclear(t_list **lst);
 void	ft_lstiter(t_list *lst, void (*f)(int));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
