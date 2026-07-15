@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/07 15:33:44 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/15 09:59:02 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_is_number(char *str)
 	return (1);
 }
 
-int	ft_process_split(char **aux, int	*num, int *cuent_num)
+int	ft_process_split(char **aux, int *num, int *cuent_num)
 {
 	long	i;
 	long	numero_actual;

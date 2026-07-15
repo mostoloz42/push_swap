@@ -6,10 +6,10 @@ CFLAGS = -Wall -Wextra -Werror -I. -I/includes
 LIB_A = ./libft/libft.a
 LIB_DIR = ./libft
 
-SRCS = calculate_disorder.c create_list.c push.c reverse.c rotate.c \
-	simple_sort.c swap.c validate_input.c checks.c ft_flags.c free.c \
-	 ft_atol.c nodos.c main.c select_intermedio.c t_index.c aux_intermedio.c \
-	 sort_three.c sort_five.c ./libft/libft.a
+SRCS = adaptive_sort.c aux_intermedio.c calculate_disorder.c checks.c \
+	create_list.c free.c ft_atol.c ft_flags.c main.c medium_sort.c \
+	nodos.c push.c reverse.c rotate.c simple_sort.c sort_five.c sort_three.c  \
+	swap.c t_index.c validate_input.c ./libft/libft.a \
 
 OBJS = $(SRCS:.c=.o)
 

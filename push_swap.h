@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 12:51:08 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/15 09:48:44 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	sort_three(t_stack **stack_a, t_bench *bench);
 void	sort_five(t_stack **stack_a, t_bench *bench, int size);
 long	ft_atol(const char *str);
 long	ft_min_max(long result);
-float	calculate_disorder(int *stack);
+float	calculate_disorder(t_stack *stack);
 int		validate_input(int	*input_list);
 int		ft_flags(char *argv);
 int		ft_is_number(char *str);
@@ -77,5 +77,6 @@ int		ft_sqrt(t_stack *stack_a);
 void	medium_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void	find_positions(t_stack *stack_a, int *lims, int *pos);
 int		indice_max_stack_b(t_stack *stack_b);
+void	adaptive_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 
 #endif

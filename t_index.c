@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   t_index.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 08:34:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/13 12:21:53 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:04:45 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ void	indexacion(t_stack *stack_a)
 		nodo_actual->index = i;
 		nodo_actual = nodo_actual->next;
 	}
+	ft_printf("indexacion terminada\n");
 }

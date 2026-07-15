@@ -3,30 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   calculate_disorder.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 10:02:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 15:06:51 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:12:07 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	calculate_disorder(int *stack)
+float	calculate_disorder(t_stack *stack)
 {
 	int	mistakes;
 	int	pairs;
-	int	i;
 
 	mistakes = 0;
 	pairs = 0;
-	i = 0;
-	while (stack[i] && stack[i + 1])
+	while (stack && stack->next)
 	{
+		ft_printf("%d\n", stack->content, stack->next->content);
 		pairs++;
-		if (stack[i] > stack[i + 1])
+		if (stack->content > stack->next->content)
 			mistakes++;
-		i++;
+		stack = stack->next;
 	}
 	return ((float) mistakes / pairs);
 }

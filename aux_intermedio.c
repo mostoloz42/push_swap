@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux_intermedio.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:52:59 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/13 12:29:43 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/15 09:52:11 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,20 +88,4 @@ void	find_positions(t_stack *stack_a, int *lims, int *pos)
 	{
 		find_positions_down(stack_a, lims, pos);
 	}
-}
-
-int	indice_max_stack_b(t_stack *stack_b)
-{
-	int	max;
-
-	if (!stack_b)
-		return (-1);
-	max = stack_b->index;
-	while (stack_b != NULL)
-	{
-		if (stack_b->index > max)
-			max = stack_b->index;
-		stack_b = stack_b->next;
-	}
-	return (max);
 }

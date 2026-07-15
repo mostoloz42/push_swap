@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/14 12:51:08 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:06:21 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	push_swap(t_stack **stack_a, t_bench *bench)
 
 	stack_b = NULL;
 	indexacion(*stack_a);
-	medium_sort(stack_a, &stack_b, bench);
+	adaptive_sort(stack_a, &stack_b, bench);
 }
 
 int	main(int argc, char **argv)
@@ -44,7 +44,6 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	stack_a = create_list(los_numeros, cuenta_numeros);
-	indexacion(*stack_a);
 	free(los_numeros);
 	if (!stack_a)
 	{
