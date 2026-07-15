@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/15 09:59:02 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:44:40 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	ft_process_split(char **aux, int *num, int *cuent_num)
 	return (1);
 }
 
-int	*ft_check(int argc, char **argv, int *cuenta_numeros)
+int	*ft_check(int argc, char **argv, int *cuenta_numeros, int *sort_type)
 {
 	int		i;
 	char	**aux_split;
@@ -86,7 +86,7 @@ int	*ft_check(int argc, char **argv, int *cuenta_numeros)
 		return (0);
 	while (i < argc)
 	{
-		if (ft_flags(argv[i]) == 1)
+		if (ft_flags(argv[i], sort_type) == 1)
 			i++;
 		else
 		{
@@ -101,14 +101,3 @@ int	*ft_check(int argc, char **argv, int *cuenta_numeros)
 	}
 	return (los_numeros);
 }
-
-/*int	main(int argc, char **argv)
-{
-	if (argc < 2)
-		return (0);
-	if (ft_check(argc, argv) == 1)
-		ft_printf("RESULTADO: ¡Argumentos válidos! Puedes crear el Stack A.\n");
-	else
-		ft_printf("Error\n");
-	return (0);
-}*/

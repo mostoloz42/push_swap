@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/15 09:48:44 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:54:45 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ long	ft_atol(const char *str);
 long	ft_min_max(long result);
 float	calculate_disorder(t_stack *stack);
 int		validate_input(int	*input_list);
-int		ft_flags(char *argv);
+int		ft_flags(char *argv, int *sort_type);
 int		ft_is_number(char *str);
-int		ft_manejo_flags(char *argv);
-int		*ft_check(int argc, char **argv, int *cuenta_numeros);
+int		ft_manejo_flags(char *argv, int *sort_type);
+int		*ft_check(int argc, char **argv, int *cuenta_numeros, int *sort_type);
 long	ft_min_max(long result);
 void	ft_lstadd_front_t(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast_t(t_stack *lst);
