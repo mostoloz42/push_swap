@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   select_sort.c                                      :+:      :+:    :+:   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 12:50:33 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/16 12:00:25 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	simple_sort(t_stack **stack_a, t_bench *bench)
 	t_stack	*stack_b;
 	int		rotates;
 
+	bench->strategy = "Simple / O(n²)";
 	stack_b = NULL;
 	rotates = 0;
 	while (*stack_a && (*stack_a)->next)

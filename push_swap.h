@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/15 10:54:45 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/16 12:14:06 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,22 @@
 
 typedef struct s_bench
 {
-	int	pa;
-	int	pb;
-	int	sa;
-	int	sb;
-	int	ss;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-	int	total;
+	char	*strategy;
+	int		pa;
+	int		pb;
+	int		sa;
+	int		sb;
+	int		ss;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+	int		show;
+	int		total;
+	int		disorder;
+	int		sort_type;
 }	t_bench;
 
 typedef struct t_stack
@@ -59,12 +63,11 @@ void	sort_three(t_stack **stack_a, t_bench *bench);
 void	sort_five(t_stack **stack_a, t_bench *bench, int size);
 long	ft_atol(const char *str);
 long	ft_min_max(long result);
-float	calculate_disorder(t_stack *stack);
+float	calculate_disorder(t_stack *stack, t_bench *bench);
 int		validate_input(int	*input_list);
-int		ft_flags(char *argv, int *sort_type);
+int		ft_flags(char *argv, t_bench *bench);
 int		ft_is_number(char *str);
-int		ft_manejo_flags(char *argv, int *sort_type);
-int		*ft_check(int argc, char **argv, int *cuenta_numeros, int *sort_type);
+int		*ft_check(int argc, char **argv, int *cuenta_numeros, t_bench *bench);
 long	ft_min_max(long result);
 void	ft_lstadd_front_t(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast_t(t_stack *lst);
@@ -77,6 +80,9 @@ int		ft_sqrt(t_stack *stack_a);
 void	medium_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void	find_positions(t_stack *stack_a, int *lims, int *pos);
 int		indice_max_stack_b(t_stack *stack_b);
-void	adaptive_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void	adaptive_sort(t_stack **stack_a, t_stack **stack_b,
+			t_bench *bench, float disorder);
+void	print_bench(t_bench *bench);
+void	save_adaptive_strategy(t_bench *bench, int size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/15 10:44:40 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/16 10:51:20 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	ft_process_split(char **aux, int *num, int *cuent_num)
 	return (1);
 }
 
-int	*ft_check(int argc, char **argv, int *cuenta_numeros, int *sort_type)
+int	*ft_check(int argc, char **argv, int *cuenta_numeros, t_bench *bench)
 {
 	int		i;
 	char	**aux_split;
@@ -86,7 +86,7 @@ int	*ft_check(int argc, char **argv, int *cuenta_numeros, int *sort_type)
 		return (0);
 	while (i < argc)
 	{
-		if (ft_flags(argv[i], sort_type) == 1)
+		if (ft_flags(argv[i], bench) == 1)
 			i++;
 		else
 		{
