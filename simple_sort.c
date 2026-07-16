@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 12:50:24 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:54:16 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,22 +85,3 @@ void	simple_sort(t_stack **stack_a, t_bench *bench)
 		pa(stack_a, &stack_b, bench);
 }
 
-/* int main(void)
-{
-	t_stack **stack_a;
-	t_bench *bench;
-
-	stack_a = malloc(sizeof(t_stack *));
-	bench = malloc(sizeof(t_bench));
-	ft_lstadd_back_t(stack_a, ft_lstnew_t(1));
-	ft_lstadd_back_t(stack_a, ft_lstnew_t(2));
-	ft_lstadd_back_t(stack_a, ft_lstnew_t(3));
-	ft_lstadd_back_t(stack_a, ft_lstnew_t(4));
-	ft_lstadd_back_t(stack_a, ft_lstnew_t(5));
-	select_sort(stack_a, bench);
-	while((*stack_a))
-	{
-		printf("%d\n", (*stack_a)->content);
-		(*stack_a) = (*stack_a)->next;
-	}
-} */

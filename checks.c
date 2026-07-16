@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/07 15:33:44 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:43:04 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,3 @@ int	*ft_check(int argc, char **argv, int *cuenta_numeros)
 	return (los_numeros);
 }
 
-/*int	main(int argc, char **argv)
-{
-	if (argc < 2)
-		return (0);
-	if (ft_check(argc, argv) == 1)
-		ft_printf("RESULTADO: ¡Argumentos válidos! Puedes crear el Stack A.\n");
-	else
-		ft_printf("Error\n");
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 10:04:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:38:27 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:36:08 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_stack	**create_list(int	*int_list, int size)
 	int		index;
 	t_stack	**stack;
 
-	if (!int_list || !validate_input(int_list))
+	if (!int_list || !validate_input(int_list, size))
 		return (NULL);
 	stack = malloc(sizeof(t_stack *));
 	if (!stack)

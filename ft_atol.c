@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 15:06:31 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/02 12:17:49 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/16 11:00:10 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,3 @@ long	ft_atol(const char *str)
 	ft_min_max(result);
 	return (result);
 }
-
-/*
-
-int main(void)
-{
-	char num[30] = "\t\n\r\v\f  469 \n";
-	int rest = ft_atoi(num);
-	ft_printf("%d\n", rest);
-	return(0);
-}
-*/

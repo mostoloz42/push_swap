@@ -6,7 +6,7 @@
 /*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/14 13:43:33 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:40:03 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int	main(int argc, char **argv)
 	if (!stack_a)
 		return (free(bench), 1);
 	push_swap(stack_a, bench);
+	
 	return (0);
 }
