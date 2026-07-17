@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 10:27:59 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 11:27:02 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void	push_swap(t_stack **stack_a, t_bench *bench)
 
 	disorder = calculate_disorder(*stack_a, bench);
 	stack_b = NULL;
+	if (disorder == 0)
+		return (no_disorder(bench));
 	indexacion(*stack_a);
 	if (bench->sort_type == 1)
 		simple_sort(stack_a, bench);

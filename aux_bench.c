@@ -6,17 +6,27 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:35:57 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/16 12:38:47 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 11:26:32 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	no_disorder(t_bench *bench)
+{
+	if (bench->sort_type == 1)
+		bench->strategy = "Simple / O(n²)";
+	else if (bench->sort_type == 2)
+		bench->strategy = "Medium / O(n√n)";
+	else if (bench->sort_type == 3)
+		bench->strategy = "Complex / O(n log n)";
+	else
+		bench->strategy = "Adaptive / Numbers already are in the correct order";
+}
+
 void	save_adaptive_strategy(t_bench *bench, int size)
 {
-	if (bench->disorder == 0)
-		bench->strategy = "Numbers already are in the correct order";
-	else if (size == 2)
+	if (size == 2)
 		bench->strategy = "Adaptive / Sort Two";
 	else if (size == 3)
 		bench->strategy = "Adaptive / Sort Three";
