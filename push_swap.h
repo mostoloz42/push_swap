@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/16 12:14:06 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 09:49:43 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	sort_five(t_stack **stack_a, t_bench *bench, int size);
 long	ft_atol(const char *str);
 long	ft_min_max(long result);
 float	calculate_disorder(t_stack *stack, t_bench *bench);
-int		validate_input(int	*input_list);
+int		validate_input(int	*input_list, int size);
 int		ft_flags(char *argv, t_bench *bench);
 int		ft_is_number(char *str);
 int		*ft_check(int argc, char **argv, int *cuenta_numeros, t_bench *bench);
@@ -84,5 +84,6 @@ void	adaptive_sort(t_stack **stack_a, t_stack **stack_b,
 			t_bench *bench, float disorder);
 void	print_bench(t_bench *bench);
 void	save_adaptive_strategy(t_bench *bench, int size);
+void	complex_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 
 #endif
