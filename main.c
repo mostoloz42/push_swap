@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 11:27:02 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 11:30:22 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int	main(int argc, char **argv)
 	push_swap(stack_a, bench);
 	if (bench->show == 1)
 		print_bench(bench);
+	free(bench);
+	ft_free_stack(stack_a);
 	return (0);
 }

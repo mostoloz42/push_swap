@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 11:26:50 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 11:30:08 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ void	no_disorder(t_bench *bench);
 void	print_bench(t_bench *bench);
 void	save_adaptive_strategy(t_bench *bench, int size);
 void	complex_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void	ft_free_stack(t_stack	**stack_a);
 
 #endif
