@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/14 12:49:16 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/17 09:51:04 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ static void	push_back_to_a(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 	int	indice_max;
 	int	coste_rrb;
 
+	bench->strategy = "Medium / O(n√n)";
 	while (*stack_b != NULL)
 	{
 		size_b = ft_lstsize_t(*stack_b);

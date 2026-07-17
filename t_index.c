@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   t_index.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 08:34:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/13 12:21:53 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/16 09:52:52 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

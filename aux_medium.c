@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux_intermedio.c                                   :+:      :+:    :+:   */
+/*   aux_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:52:59 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/16 13:56:38 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/17 09:44:38 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,20 +88,4 @@ void	find_positions(t_stack *stack_a, int *lims, int *pos)
 	{
 		find_positions_down(stack_a, lims, pos);
 	}
-}
-
-int	indice_max_stack_b(t_stack *stack_b)
-{
-	int	max;
-
-	if (!stack_b)
-		return (-1);
-	max = stack_b->index;
-	while (stack_b != NULL)
-	{
-		if (stack_b->index > max)
-			max = stack_b->index;
-		stack_b = stack_b->next;
-	}
-	return (max);
 }

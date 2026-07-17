@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 11:59:07 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 12:32:24 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/17 09:50:14 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

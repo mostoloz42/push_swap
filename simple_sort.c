@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:31:33 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/16 13:54:16 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/17 09:50:50 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	simple_sort(t_stack **stack_a, t_bench *bench)
 	t_stack	*stack_b;
 	int		rotates;
 
+	bench->strategy = "Simple / O(n²)";
 	stack_b = NULL;
 	rotates = 0;
 	while (*stack_a && (*stack_a)->next)
@@ -84,4 +85,3 @@ void	simple_sort(t_stack **stack_a, t_bench *bench)
 	while (stack_b)
 		pa(stack_a, &stack_b, bench);
 }
-
