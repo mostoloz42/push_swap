@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   complex_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 12:48:00 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/16 09:44:25 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:20:26 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_max_bit(int nb)
+static int	get_max_bit(int nb)
 {
 	int	bits;
-	
+
 	bits = 0;
 	while (nb != 0)
 	{
@@ -35,6 +35,7 @@ void	complex_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 	i = 0;
 	size = ft_lstsize_t(*stack_a);
 	max_bits = get_max_bit(size - 1);
+	bench->strategy = "Complex / O(n log n)";
 	while (i < max_bits)
 	{
 		j = 0;

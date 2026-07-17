@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:45:11 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:54:38 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:28:51 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **src, t_stack **dst)
+static void	push(t_stack **src, t_stack **dst)
 {
 	t_stack	*nodo_one;
 

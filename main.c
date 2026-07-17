@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 09:47:11 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:27:59 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_stack **stack_a, t_bench *bench)
+static void	push_swap(t_stack **stack_a, t_bench *bench)
 {
 	t_stack	*stack_b;
 	float	disorder;
@@ -24,8 +24,8 @@ void	push_swap(t_stack **stack_a, t_bench *bench)
 		simple_sort(stack_a, bench);
 	else if (bench->sort_type == 2)
 		medium_sort(stack_a, &stack_b, bench);
-	else if (bench->sort_type == 3)//complex_sort()
-		ft_printf("complex sort\n");
+	else if (bench->sort_type == 3)
+		complex_sort(stack_a, &stack_b, bench);
 	else
 		adaptive_sort(stack_a, &stack_b, bench, disorder);
 }

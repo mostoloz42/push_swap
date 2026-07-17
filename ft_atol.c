@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 15:06:31 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/16 11:00:10 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:34:47 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

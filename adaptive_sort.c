@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 12:33:30 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/16 12:37:01 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:08:21 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ void	adaptive_sort(t_stack **stack_a, t_stack **stack_b,
 
 	size = ft_lstsize_t(*stack_a);
 	if (size < 2 || disorder == 0)
-	{
-		save_adaptive_strategy(bench, size);
-		return ;
-	}
+		return (save_adaptive_strategy(bench, size));
 	else if (size == 2)
 		sa(stack_a, bench);
 	else if (size == 3)
@@ -33,7 +30,7 @@ void	adaptive_sort(t_stack **stack_a, t_stack **stack_b,
 		simple_sort(stack_a, bench);
 	else if (disorder < 0.5)
 		medium_sort(stack_a, stack_b, bench);
-	else //	complex_sort(stack_a, bench);
-		ft_printf("complex sort\n");
+	else
+		complex_sort(stack_a, stack_b, bench);
 	save_adaptive_strategy(bench, size);
 }

@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 10:04:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 09:45:41 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:20:44 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack	**create_list(int	*int_list, int size)
 	stack = malloc(sizeof(t_stack *));
 	if (!stack)
 		return (NULL);
-	*stack = NULL; // Inicializar el ancla de la lista NULL
+	*stack = NULL;
 	index = 0;
 	while (index < size)
 	{

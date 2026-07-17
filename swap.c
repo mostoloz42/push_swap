@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 10:45:01 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:55:46 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:30:14 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack)
+static void	swap(t_stack **stack)
 {
 	t_stack	*buffer_a;
 	t_stack	*buffer_b;

@@ -6,13 +6,14 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 09:45:16 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:19:59 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_duplicate(int *los_numeros, int numero_actual, int cuenta_numeros)
+static int	ft_check_duplicate(int *los_numeros, int numero_actual,
+	int cuenta_numeros)
 {
 	int	i;
 
@@ -26,7 +27,7 @@ int	ft_check_duplicate(int *los_numeros, int numero_actual, int cuenta_numeros)
 	return (0);
 }
 
-int	ft_is_number(char *str)
+static int	ft_is_number(char *str)
 {
 	int	i;
 
@@ -44,7 +45,7 @@ int	ft_is_number(char *str)
 	return (1);
 }
 
-int	ft_process_split(char **aux, int *num, int *cuent_num)
+static int	ft_process_split(char **aux, int *num, int *cuent_num)
 {
 	long	i;
 	long	numero_actual;
