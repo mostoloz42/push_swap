@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptive_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 12:33:30 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 11:23:00 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 12:43:24 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

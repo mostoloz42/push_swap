@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 11:30:22 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 13:14:44 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static void	push_swap(t_stack **stack_a, t_bench *bench)
 	float	disorder;
 
 	disorder = calculate_disorder(*stack_a, bench);
-	stack_b = NULL;
 	if (disorder == 0)
 		return (no_disorder(bench));
-	indexacion(*stack_a);
+	stack_b = NULL;
+	ft_index(*stack_a);
 	if (bench->sort_type == 1)
 		simple_sort(stack_a, bench);
 	else if (bench->sort_type == 2)
@@ -34,8 +34,8 @@ static void	push_swap(t_stack **stack_a, t_bench *bench)
 
 int	main(int argc, char **argv)
 {
-	int		cuenta_numeros;
-	int		*los_numeros;
+	int		lot_num;
+	int		*numbers;
 	t_stack	**stack_a;
 	t_bench	*bench;
 
@@ -45,11 +45,11 @@ int	main(int argc, char **argv)
 	if (!bench)
 		return (1);
 	ft_bzero(bench, sizeof(t_bench));
-	los_numeros = ft_check(argc, argv, &cuenta_numeros, bench);
-	if (!los_numeros)
-		return (ft_printf("Error\n"), free(bench), 1);
-	stack_a = create_list(los_numeros, cuenta_numeros);
-	free(los_numeros);
+	numbers = ft_check(argc, argv, &lot_num, bench);
+	if (!numbers)
+		return (write(2, "Error\n", 6), free(bench), 1);
+	stack_a = create_list(numbers, lot_num);
+	free(numbers);
 	if (!stack_a)
 		return (free(bench), 1);
 	push_swap(stack_a, bench);

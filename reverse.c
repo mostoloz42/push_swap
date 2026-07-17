@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:40:19 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:55:06 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 13:10:46 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 static void	reverse(t_stack **stack)
 {
-	t_stack	*ultimo;
-	t_stack	*antiguo_primero;
+	t_stack	*last;
+	t_stack	*last_first;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	antiguo_primero = *stack;
-	ultimo = antiguo_primero;
-	while (ultimo->next)
-		ultimo = ultimo->next;
-	if (ultimo->prev)
-		ultimo->prev->next = NULL;
-	ultimo->next = antiguo_primero;
-	ultimo->prev = NULL;
-	antiguo_primero->prev = ultimo;
-	*stack = ultimo;
+	last_first = *stack;
+	last = last_first;
+	while (last->next)
+		last = last->next;
+	if (last->prev)
+		last->prev->next = NULL;
+	last->next = last_first;
+	last->prev = NULL;
+	last_first->prev = last;
+	*stack = last;
 }
 
 void	rra(t_stack **stack_a, t_bench *bench)
