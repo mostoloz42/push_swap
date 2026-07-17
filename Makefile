@@ -8,7 +8,7 @@ LIB_DIR = ./libft
 
 SRCS = calculate_disorder.c create_list.c push.c reverse.c rotate.c \
 	simple_sort.c swap.c validate_input.c checks.c ft_flags.c free.c \
-	 ft_atol.c nodos.c main.c medium_sort.c t_index.c aux_intermedio.c \
+	 ft_atol.c nodos.c main.c medium_sort.c t_index.c aux_medium.c \
 	 sort_three.c sort_five.c complex_sort.c ./libft/libft.a
 
 OBJS = $(SRCS:.c=.o)

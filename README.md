@@ -35,7 +35,7 @@ La arquitectura adaptativa del programa se diseñó bajo un principio estricto: 
 
 * **simple**:
 
-* **Chuncks para Algoritmo intermedio:** Al dividir el Stack A en subconjuntos de tamaño `raiz curadrada de n`, limitamos el radio de búsqueda del programa. Cuando buscamos el número más óptimo para mover al Stack B, las rotaciones (ra / rra) requeridas son mínimas porque los elementos candidatos están geográficamente cerca de la superficie del stack. Esto permite batir con holgura el límite de los movimientos exigido.
+* **Chuncks para Algoritmo intermedio:** Al dividir el Stack A en subconjuntos de tamaño `√n`, limitamos el radio de búsqueda del programa. Cuando buscamos el número más óptimo para mover al Stack B, las rotaciones (ra / rra) requeridas son mínimas porque los elementos candidatos están geográficamente cerca de la superficie del stack. Esto permite batir con holgura el límite de los movimientos exigido.
 
 * **Radix para Algoritmo complejo:** Radix ofrece predictibilidad absoluta y consistencia ciega. Al mapear previamente los números a índices correlativos de `0` a `size - 1`, nos independizamos de la magnitud de los números originales. Evaluar el bit menos significativo en cada pasada garantiza que el programa realice exactamente el mismo número de comprobaciones por elemento, logrando un flujo constante y seguro que estabiliza el conteo de movimientos por debajo de los límites críticos de aprobado en listas grandes.
 
@@ -45,9 +45,9 @@ La arquitectura adaptativa del programa se diseñó bajo un principio estricto: 
 |---------------|---------------|------------------------------|
 | main.c | mostoloz y francysa | Fuimos adaptando juntos a medida que ibamos avanzando la funcion para ir probando el programa cada uno con su parte, y luego juntos.|
 | checks.c, ft_atol, free.c, ft_flags | francysa | El chequeo para validar que sean numeros, enteros, no sean duplicados, no superen los límites.|
-|calculate_disorder.c, create_list.c, validate_imput.c | moztoloz | Ver el índice de desorden, crear la ista doblemente enlazada con el stack y validar.|
+|calculate_disorder.c, create_list.c, validate_imput.c | moztoloz | Ver el índice de desorden, crear la lista doblemente enlazada con el stack y validar.|
 |simple_sort.c, Makefile | mostoloz | Algoritmo simple y Makefile junto con la libft y el ft_printf. |
-| medium_sort.c, chuncks.c, complex_sort | francysa | Algoritmo intermedio y complejo. |
+| medium_sort.c, chuncks.c, aux_medium.c, complex_sort | francysa | Algoritmo intermedio y complejo. |
 | sort_five.c, sort_three.c | mostoloz | Casos especificos con desorden de numeros. |
 | nodos.c, t_index.c | francysa | Ajuste de algunas funciones de Libft para nuestras listas y Indexacion. |
 | push_swap.h | mostoloz y francysa | Hemos ido construyendo justos el header a medida que vamos avanzando. |
@@ -70,7 +70,7 @@ El programa recibe una lista de numeros enteros como argumentos independientes o
 
 Puedes utilizar flags para forzar el uso de una lógica concreta. Por ejemplo ejecuta:
 
-`./push_swap --bench --adaptive 4 67 3 87 23`
+`./push_swap --simple 4 67 3 87 23`
 
 **MODO BENCH**
 
@@ -98,13 +98,3 @@ Para el diseño, la optimización y el blindaje del proyecto, se utilizaron los 
 
 * Herramientas de Diagnóstico de Bajo Nivel:
 	Valgrind (Memcheck): Herramienta principal para interceptar saltos condicionales erróneos provocados por la lectura de memoria basura en el parsing y corregir las fugas en la estructura t_bench y listas enlazadas.
-
-## Explicación y justificación del algoritmo
-
-La arquitectura adaptativa del programa se diseñó bajo un principio estricto: No existe un algoritmo único ideal para todos los escenarios de desorden numérico. Cada lógica se seleccionó mediante prueba, error y muchos intentos hasta lograrlo.
-
-* **simple**:
-
-* **Chuncks para Algoritmo intermedio:** Al dividir el Stack A en subconjuntos de tamaño `raiz curadrada de n`, limitamos el radio de búsqueda del programa. Cuando buscamos el número más óptimo para mover al Stack B, las rotaciones (ra / rra) requeridas son mínimas porque los elementos candidatos están geográficamente cerca de la superficie del stack. Esto permite batir con holgura el límite de los movimientos exigido.
-
-* **Radix para Algoritmo complejo:** Radix ofrece predictibilidad absoluta y consistencia ciega. Al mapear previamente los números a índices correlativos de `0` a `size - 1`, nos independizamos de la magnitud de los números originales. Evaluar el bit menos significativo en cada pasada garantiza que el programa realice exactamente el mismo número de comprobaciones por elemento, logrando un flujo constante y seguro que estabiliza el conteo de movimientos por debajo de los límites críticos de aprobado en listas grandes.
