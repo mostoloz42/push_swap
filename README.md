@@ -33,7 +33,7 @@ Desorden alto (>=0.5)
 
 La arquitectura adaptativa del programa se diseñó bajo un principio estricto: No existe un algoritmo único ideal para todos los escenarios de desorden numérico. Cada lógica se seleccionó mediante prueba, error y muchos intentos hasta lograrlo.
 
-* **simple**:
+* **Selection Sort para Algoritmo simple**: Selection Sort es un algoritmo muy simple que se centra en encontrar el número mínimo actual del stack a, hacer rotates (o reverse rotates, según que sea mas conveniente) hasta llegar a ese minimo y hacer un push b. Esto hace que el stack b sea el stack a ordenado de mayor a menor, de forma que cuando solo quede un elemento en el stack a (el numero máximo) solo habra que hacer push a hasta que el stack b esté vacio, de forma que el stack a quede ordenado de menor a mayor.
 
 * **Chuncks para Algoritmo intermedio:** Al dividir el Stack A en subconjuntos de tamaño `√n`, limitamos el radio de búsqueda del programa. Cuando buscamos el número más óptimo para mover al Stack B, las rotaciones (ra / rra) requeridas son mínimas porque los elementos candidatos están geográficamente cerca de la superficie del stack. Esto permite batir con holgura el límite de los movimientos exigido.
 
@@ -45,15 +45,15 @@ La arquitectura adaptativa del programa se diseñó bajo un principio estricto: 
 |---------------|---------------|------------------------------|
 | main.c | mostoloz y francysa | Fuimos adaptando juntos a medida que ibamos avanzando la funcion para ir probando el programa cada uno con su parte, y luego juntos.|
 | checks.c, ft_atol, free.c, ft_flags | francysa | El chequeo para validar que sean numeros, enteros, no sean duplicados, no superen los límites.|
-|calculate_disorder.c, create_list.c, validate_imput.c | moztoloz | Ver el índice de desorden, crear la lista doblemente enlazada con el stack y validar.|
-|simple_sort.c, Makefile | mostoloz | Algoritmo simple y Makefile junto con la libft y el ft_printf. |
+| calculate_disorder.c, create_list.c, validate_imput.c | moztoloz | Ver el índice de desorden, crear la lista doblemente enlazada con el stack y validar.|
+| simple_sort.c, Makefile | mostoloz | Algoritmo simple y Makefile junto con la libft y el ft_printf. |
 | medium_sort.c, chuncks.c, aux_medium.c, complex_sort | francysa | Algoritmo intermedio y complejo. |
 | sort_five.c, sort_three.c | mostoloz | Casos especificos con desorden de numeros. |
 | nodos.c, t_index.c | francysa | Ajuste de algunas funciones de Libft para nuestras listas y Indexacion. |
 | push_swap.h | mostoloz y francysa | Hemos ido construyendo justos el header a medida que vamos avanzando. |
-| swap.c, rotate.c | mostoloz | movimientos en las pilas. |
-| revers.c., push.c | francysa | movimientos en las pilas. |
-
+| swap.c, rotate.c | mostoloz | Movimientos en las pilas. |
+| revers.c., push.c | francysa | Movimientos en las pilas. |
+| aux_bench.c | mostoloz | Funciones auxiliares para el bench (imprimirlo, guardar la estrategia...) |
 
 
 ## Instrucciones
@@ -74,7 +74,7 @@ Puedes utilizar flags para forzar el uso de una lógica concreta. Por ejemplo ej
 
 **MODO BENCH**
 
-Para ver el índice de desorden, la estragegia que se ha utilizadp, el total de movimientos y cuantos de cada uno ha utilizado. Por ejemplo ejecuta:
+Para ver el índice de desorden, la estragegia que se ha utilizado, el total de movimientos y cuantos de cada uno ha utilizado. Por ejemplo ejecuta:
 
 `./push_swap --bench 4 67 3 87 23`
 
@@ -89,12 +89,24 @@ Para ver el índice de desorden, la estragegia que se ha utilizadp, el total de 
 Puedes validar la ausencia de fugas de memoria utilizand:
 `valgrind --leak-check=full --track-origins=yes ./push_swap 5 3 4 1 2`
 
+## Uso de IA
+
+(daniela)
+
 ## Recursos
 Para el diseño, la optimización y el blindaje del proyecto, se utilizaron los siguientes recursos y herramientas de la comunidad:
 
-* Visualizadores de Stacks: Uso de herramientas de simulación gráfica como push_swap_visualizer para analizar el comportamiento tridimensional de los chunks y la migración de bits en Radix.
+### Visualizadores de Stacks: 
+Hemos utilizado diferentes paginas para visualizar tanto como funciona nuestro codigo como para ver como podiamos plantearlo:
+* [Push Swap Game](https://servandobarreiro.github.io/push_swap_game/): Este juego nos ha servido para entender como podemos ordenar un stack con los movimientos limitados a nuestra disposición.
 
-* Pruebas de Estrés (Testers): Utilización de generadores de números aleatorios automatizados (push_swap_tester) para evaluar la eficiencia de movimientos en arrays de 100 y 500 elementos.
+* [Push Swap Visualizer](https://codepen.io/ahkoh/full/bGWxmVz): Esta página nos ha ayudado a ver de forma visual como trabaja nuestro codigo con el stack de numeros y confirmar que realmente cumple su función.
 
-* Herramientas de Diagnóstico de Bajo Nivel:
-	Valgrind (Memcheck): Herramienta principal para interceptar saltos condicionales erróneos provocados por la lectura de memoria basura en el parsing y corregir las fugas en la estructura t_bench y listas enlazadas.
+### Algoritmos de Orden: 
+Al buscar información sobre diferentes algoritmos de ordenación hemos encontrado estas páginas que nos han ayudado mucho a la hora de elegir un planteamiento:
+* [Sort Visualizer](https://sortvisualizer.com/): Esta página nos ha ayudado mucho para ver de forma visual como trabajan distintos algoritmos de ordenación.
+
+* [Sorting Visualizer](https://visualgo.net/en/sorting): Esta página es similar a la anterior, pero esta trabaja mas lentamente lo que nos ha ayudado a interiorizar lo que hace cada algoritmo.
+
+### Herramientas de Diagnóstico de Bajo Nivel:
+*	Valgrind (Memcheck): Herramienta principal para interceptar saltos condicionales erróneos provocados por la lectura de memoria basura en el parsing y corregir las fugas en la estructura t_bench y listas enlazadas.
