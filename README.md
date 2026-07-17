@@ -91,7 +91,12 @@ Puedes validar la ausencia de fugas de memoria utilizando:
 
 ## Uso de IA
 
-(daniela)
+* **Comprensión Teórica:** Explicación y desglose de algoritmos de ordenación complejos (como el *Turk Algorithm* y *Radix*).
+* **Análisis de Complejidad:** Discusión teórica sobre la complejidad temporal $O(N^2)$ vs $O(N \log N)$ y cómo reducir el número de instrucciones.
+* **Estrategias de Depuración (Debugging):** Ayuda para conceptualizar casos límite (listas ya ordenadas, valores duplicados, `INT_MAX`/`INT_MIN`).
+* **Optimización Lógica:** Lluvia de ideas sobre cómo calcular de forma eficiente el coste de movimiento de un nodo (calcular la combinación más barata de rotaciones `ra`, `rb`, `rr`, `rrr`).
+
+> **Nota:** La IA se utilizó estrictamente como un **tutor dinámico** para acelerar el proceso de aprendizaje y diseño algorítmico, asegurando que la implementación final sea 100% propia y comprendida en su totalidad.
 
 ## Recursos
 Para el diseño, la optimización y el blindaje del proyecto, se utilizaron los siguientes recursos y herramientas de la comunidad:
