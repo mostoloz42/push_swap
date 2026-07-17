@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 10:31:07 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:43:00 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ void	adaptive_sort(t_stack **stack_a, t_stack **stack_b,
 void	print_bench(t_bench *bench);
 void	save_adaptive_strategy(t_bench *bench, int size);
 void	complex_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void	ft_free_stack(t_stack	**stack_a);
 
 #endif
