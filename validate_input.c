@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   validate_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 09:46:23 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/30 10:54:25 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:37:25 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate_input(int	*input_list)
+int	validate_input(int	*input_list, int size)
 {
 	int	i;
 	int	j;
 	int	checking;
 
 	i = 0;
-	while (input_list[i])
+	while (i < size)
 	{
 		checking = input_list[i];
 		j = i + 1;
-		while (input_list[j])
+		while (j < size)
 		{
 			if (input_list[j] == checking)
 				return (0);
