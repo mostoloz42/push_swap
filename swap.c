@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 10:45:01 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 10:30:14 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 12:41:15 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	swap(t_stack **stack)
 void	sa(t_stack **stack_a, t_bench *bench)
 {
 	swap(stack_a);
-	ft_printf("sa\n");
+	ft_printf("sa\n", 1);
 	bench->sa += 1;
 	bench->total += 1;
 }
@@ -41,7 +41,7 @@ void	sa(t_stack **stack_a, t_bench *bench)
 void	sb(t_stack **stack_b, t_bench *bench)
 {
 	swap(stack_b);
-	ft_printf("sb\n");
+	ft_printf("sb\n", 1);
 	bench->sb += 1;
 	bench->total += 1;
 }
@@ -50,7 +50,7 @@ void	ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_printf("ss\n");
+	ft_printf("ss\n", 1);
 	bench->ss += 1;
 	bench->total += 1;
 }

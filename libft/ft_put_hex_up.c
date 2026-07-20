@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:25:34 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/22 12:45:45 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 12:37:13 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_put_hex_up(unsigned int nmb)
+int	ft_put_hex_up(unsigned int nmb, int fd)
 {
 	char	buffer[30];
 	int		count;
@@ -20,7 +20,7 @@ int	ft_put_hex_up(unsigned int nmb)
 	int		result;
 
 	if (nmb == 0)
-		return (write(1, "0", 1));
+		return (write(fd, "0", 1));
 	index = 0;
 	count = 0;
 	while (nmb > 0)
@@ -34,6 +34,6 @@ int	ft_put_hex_up(unsigned int nmb)
 		index++;
 		count ++;
 	}
-	ft_write_num_rev(index, buffer);
+	ft_write_num_rev(index, buffer, fd);
 	return (count);
 }

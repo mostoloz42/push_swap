@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:45:11 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 10:28:51 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 12:41:22 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	push(t_stack **src, t_stack **dst)
 void	pa(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	push(stack_b, stack_a);
-	ft_printf("pa\n");
+	ft_printf("pa\n", 1);
 	bench->pa += 1;
 	bench->total += 1;
 }
@@ -40,7 +40,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 void	pb(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	push(stack_a, stack_b);
-	ft_printf("pb\n");
+	ft_printf("pb\n", 1);
 	bench->pb += 1;
 	bench->total += 1;
 }

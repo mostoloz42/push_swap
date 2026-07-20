@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:35:57 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/20 09:40:17 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 12:40:09 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ void	save_adaptive_strategy(t_bench *bench, int size)
 
 void	print_bench(t_bench *bench)
 {
-	ft_printf("[bench] disorder: %f%%\n", bench->disorder);
-	ft_printf("[bench] strategy: %s\n", bench->strategy);
-	ft_printf("[bench] total ops: %d\n", bench->total);
+	ft_printf("[bench] disorder: %f%%\n", 2, bench->disorder);
+	ft_printf("[bench] strategy: %s\n", 2, bench->strategy);
+	ft_printf("[bench] total ops: %d\n", 2, bench->total);
 	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d \n",
-		bench->sa, bench->sb, bench->ss, bench->pa, bench->pb);
+		2, bench->sa, bench->sb, bench->ss, bench->pa, bench->pb);
 	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d \n",
-		bench->ra, bench->rb, bench->rr, bench->rra, bench->rrb, bench->rrb);
+		2, bench->ra, bench->rb, bench->rr, bench->rra, bench->rrb, bench->rrb);
 }
