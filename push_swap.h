@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:19:49 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 13:14:52 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/20 10:55:03 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 typedef struct s_bench
 {
+	double	disorder;
 	char	*strategy;
 	int		pa;
 	int		pb;
@@ -34,7 +35,6 @@ typedef struct s_bench
 	int		rrr;
 	int		show;
 	int		total;
-	int		disorder;
 	int		sort_type;
 }	t_bench;
 
