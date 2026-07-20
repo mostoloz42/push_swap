@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:16:42 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/22 12:45:09 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 09:52:23 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int	ft_print_arg(char type, va_list args)
 		count = ft_put_ptr(va_arg(args, void *));
 	else if (type == 'd' || type == 'i')
 		count = ft_put_int(va_arg(args, int));
+	else if (type == 'f')
+		count = ft_put_double(va_arg(args, double));
 	else if (type == 'u')
 		count = ft_put_uns((size_t) va_arg(args, unsigned int));
 	else if (type == 'x')

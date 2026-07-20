@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 10:48:04 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/14 12:15:11 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 10:24:53 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int		ft_put_uns(unsigned int nmb);
 int		ft_strlen(const char *str);
 int		ft_atoi(const char *nptr);
 int		ft_lstsize(t_list *lst);
+int		ft_put_double(double nbr);
 int		ft_put_str(char *str);
 int		ft_put_ptr(void *ptr);
 int		ft_put_int(int nbr);
