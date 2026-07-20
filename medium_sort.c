@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 16:06:53 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 09:51:04 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:34:37 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,22 @@ static void	rotate_and_push(t_stack **sa, t_stack **sb,
 			rra(sa, bench);
 	}
 	pb(sa, sb, bench);
+}
+
+static int	indice_max_stack_b(t_stack *stack_b)
+{
+	int	max;
+
+	if (!stack_b)
+		return (-1);
+	max = stack_b->index;
+	while (stack_b != NULL)
+	{
+		if (stack_b->index > max)
+			max = stack_b->index;
+		stack_b = stack_b->next;
+	}
+	return (max);
 }
 
 static void	push_back_to_a(t_stack **stack_a, t_stack **stack_b, t_bench *bench)

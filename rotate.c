@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:03:31 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/13 11:55:25 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 13:12:11 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 static void	rotate(t_stack **stack)
 {
-	t_stack	*primero;
-	t_stack	*nuevo_primero;
-	t_stack	*ultimo;
+	t_stack	*first;
+	t_stack	*new_first;
+	t_stack	*latter;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	primero = *stack;
-	nuevo_primero = primero->next;
-	ultimo = primero;
-	while (ultimo->next != NULL)
-		ultimo = ultimo->next;
-	*stack = nuevo_primero;
-	nuevo_primero->prev = NULL;
-	ultimo->next = primero;
-	primero->prev = ultimo;
-	primero->next = NULL;
+	first = *stack;
+	new_first = first->next;
+	latter = first;
+	while (latter->next != NULL)
+		latter = latter->next;
+	*stack = new_first;
+	new_first->prev = NULL;
+	latter->next = first;
+	first->prev = latter;
+	first->next = NULL;
 }
 
 void	ra(t_stack **stack_a, t_bench *bench)

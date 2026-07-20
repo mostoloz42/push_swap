@@ -3,30 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 09:45:16 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 13:03:39 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_duplicate(int *los_numeros, int numero_actual, int cuenta_numeros)
+static int	ft_check_duplicate(int *numbers, int num_present,
+	int lot_num)
 {
 	int	i;
 
 	i = 0;
-	while (i < cuenta_numeros)
+	while (i < lot_num)
 	{
-		if (los_numeros[i] == numero_actual)
+		if (numbers[i] == num_present)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-int	ft_is_number(char *str)
+static int	ft_is_number(char *str)
 {
 	int	i;
 
@@ -44,10 +45,10 @@ int	ft_is_number(char *str)
 	return (1);
 }
 
-int	ft_process_split(char **aux, int *num, int *cuent_num)
+static int	ft_process_split(char **aux, int *num, int *cuent_num)
 {
 	long	i;
-	long	numero_actual;
+	long	num_present;
 
 	i = 0;
 	while (aux[i] != NULL)
@@ -57,15 +58,15 @@ int	ft_process_split(char **aux, int *num, int *cuent_num)
 			ft_free_split(aux);
 			return (0);
 		}
-		numero_actual = ft_atol(aux[i]);
-		if (ft_min_max(numero_actual) != 1)
+		num_present = ft_atol(aux[i]);
+		if (ft_min_max(num_present) != 1)
 			return (ft_free_split(aux), 0);
-		if (ft_check_duplicate (num, numero_actual, *cuent_num) == 1)
+		if (ft_check_duplicate (num, num_present, *cuent_num) == 1)
 		{
 			ft_free_split(aux);
 			return (0);
 		}
-		num[*cuent_num] = numero_actual;
+		num[*cuent_num] = num_present;
 		(*cuent_num)++;
 		i++;
 	}
@@ -73,16 +74,16 @@ int	ft_process_split(char **aux, int *num, int *cuent_num)
 	return (1);
 }
 
-int	*ft_check(int argc, char **argv, int *cuenta_numeros, t_bench *bench)
+int	*ft_check(int argc, char **argv, int *lot_num, t_bench *bench)
 {
 	int		i;
 	char	**aux_split;
-	int		*los_numeros;
+	int		*numbers;
 
 	i = 1;
-	*cuenta_numeros = 0;
-	los_numeros = malloc(sizeof(int) * argc * 2);
-	if (!los_numeros)
+	*lot_num = 0;
+	numbers = malloc(sizeof(int) * argc * 2);
+	if (!numbers)
 		return (0);
 	while (i < argc)
 	{
@@ -91,13 +92,13 @@ int	*ft_check(int argc, char **argv, int *cuenta_numeros, t_bench *bench)
 		else
 		{
 			aux_split = ft_split(argv[i], ' ');
-			if (ft_process_split(aux_split, los_numeros, cuenta_numeros) == 0)
+			if (ft_process_split(aux_split, numbers, lot_num) == 0)
 			{
-				free(los_numeros);
+				free(numbers);
 				return (0);
 			}
 			i++;
 		}
 	}
-	return (los_numeros);
+	return (numbers);
 }

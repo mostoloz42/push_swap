@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:52:59 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 09:44:38 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 12:58:57 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_sqrt(t_stack *stack_a)
 	return (i);
 }
 
-static int	es_del_chunk(t_stack *nodo, int *lims)
+static int	is_chunck(t_stack *nodo, int *lims)
 {
 	if (!nodo)
 		return (0);
@@ -42,45 +42,45 @@ static int	es_del_chunk(t_stack *nodo, int *lims)
 
 static	void	find_positions_down(t_stack *stack_a, int *lims, int *pos)
 {
-	t_stack	*actual;
+	t_stack	*present;
 	int		i;
 	int		found;
 
-	actual = stack_a;
-	while (actual && actual->next)
-		actual = actual->next;
+	present = stack_a;
+	while (present && present->next)
+		present = present->next;
 	i = ft_lstsize_t(stack_a) - 1;
 	found = 0;
-	while (actual && !found)
+	while (present && !found)
 	{
-		if (es_del_chunk(actual, lims))
+		if (is_chunck(present, lims))
 		{
 			pos[1] = i;
 			found = 1;
 		}
 		i--;
-		actual = actual->prev;
+		present = present->prev;
 	}
 }
 
 void	find_positions(t_stack *stack_a, int *lims, int *pos)
 {
-	t_stack	*actual;
+	t_stack	*present;
 	int		i;
 	int		found;
 
-	actual = stack_a;
+	present = stack_a;
 	i = 0;
 	found = 0;
-	while (actual && !found)
+	while (present && !found)
 	{
-		if (es_del_chunk(actual, lims))
+		if (is_chunck(present, lims))
 		{
 			pos[0] = i;
 			found = 1;
 		}
 		i++;
-		actual = actual->next;
+		present = present->next;
 	}
 	if (pos[0] == -1)
 		return ;

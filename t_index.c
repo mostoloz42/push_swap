@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   t_index.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 08:34:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/16 09:52:52 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/17 13:15:12 by francysa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	indexacion(t_stack *stack_a)
+void	ft_index(t_stack *stack_a)
 {
-	t_stack	*nodo_actual;
-	t_stack	*nodo;
+	t_stack	*node_present;
+	t_stack	*node;
 	int		i;
 
-	nodo_actual = stack_a;
-	while (nodo_actual != NULL)
+	node_present = stack_a;
+	while (node_present != NULL)
 	{
-		nodo = stack_a;
+		node = stack_a;
 		i = 0;
-		while (nodo != NULL)
+		while (node != NULL)
 		{
-			if (nodo_actual->content > nodo->content)
+			if (node_present->content > node->content)
 				i++;
-			nodo = nodo->next;
+			node = node->next;
 		}
-		nodo_actual->index = i;
-		nodo_actual = nodo_actual->next;
+		node_present->index = i;
+		node_present = node_present->next;
 	}
 }
