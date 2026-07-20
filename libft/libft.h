@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 10:48:04 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/20 10:24:53 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 12:38:17 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_write_num_rev(int index, char *buffer);
+void	ft_write_num_rev(int index, char *buffer, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
@@ -46,18 +46,18 @@ char	translate_hex_low(int result);
 char	translate_hex_up(int result);
 int		ft_strncmp(const char *str1, const char *str2, size_t size);
 int		ft_memcmp(const void *str1, const void *str2, size_t size);
-int		ft_printf(const char *content, ...);
-int		ft_put_hex_low(unsigned int nmb);
-int		ft_put_hex_up(unsigned int nmb);
-int		ft_put_uns(unsigned int nmb);
+int		ft_printf(const char *content, int fd, ...);
+int		ft_put_hex_low(unsigned int nmb, int fd);
+int		ft_put_hex_up(unsigned int nmb, int fd);
+int		ft_put_uns(unsigned int nmb, int fd);
 int		ft_strlen(const char *str);
 int		ft_atoi(const char *nptr);
 int		ft_lstsize(t_list *lst);
-int		ft_put_double(double nbr);
-int		ft_put_str(char *str);
-int		ft_put_ptr(void *ptr);
-int		ft_put_int(int nbr);
-int		ft_put_char(char c);
+int		ft_put_double(double nbr, int fd);
+int		ft_put_str(char *str, int fd);
+int		ft_put_ptr(void *ptr, int fd);
+int		ft_put_int(int nbr, int fd);
+int		ft_put_char(char c, int fd);
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);

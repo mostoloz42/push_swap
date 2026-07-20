@@ -6,13 +6,13 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:15:43 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/06/22 12:45:45 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 12:18:29 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_put_char(char c)
+int	ft_put_char(char c, int fd)
 {
-	return (write(1, &c, 1));
+	return (write(fd, &c, 1));
 }

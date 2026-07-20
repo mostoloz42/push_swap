@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:03:31 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/17 13:12:11 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/20 12:41:20 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	rotate(t_stack **stack)
 void	ra(t_stack **stack_a, t_bench *bench)
 {
 	rotate(stack_a);
-	ft_printf("ra\n");
+	ft_printf("ra\n", 1);
 	bench->ra += 1;
 	bench->total += 1;
 }
@@ -43,7 +43,7 @@ void	ra(t_stack **stack_a, t_bench *bench)
 void	rb(t_stack **stack_b, t_bench *bench)
 {
 	rotate(stack_b);
-	ft_printf("rb\n");
+	ft_printf("rb\n", 1);
 	bench->rb += 1;
 	bench->total += 1;
 }
@@ -52,7 +52,7 @@ void	rr(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	ft_printf("rr\n");
+	ft_printf("rr\n", 1);
 	bench->rr += 1;
 	bench->total += 1;
 }
