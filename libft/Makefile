@@ -5,8 +5,8 @@
 #                                                      +:+ +:+         +:+     #
 #   By: mostoloz <mostoloz@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
-#   Created: 0026/05/11 10:48:42 by mostolozls          #+#    #+#             #
-#   Updated: 2026/06/22 12:47:39 by mostoloz           ###   ########.fr       #
+#   Created: 0026/05/11 10:48:42 by stolozls            #+#    #+#             #
+#   Updated: 2026/07/17 11:56:00 by mostoloz           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
        ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_strjoin.c \
        ft_substr.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
        ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-       ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-       ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
+       ft_putnbr_fd.c ft_put_float.c ft_lstnew.c ft_lstadd_front.c  \
+       ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c  ft_lstsize.c \
        ft_lstiter.c ft_lstmap.c ft_printf.c ft_put_char.c ft_put_hex_low.c \
        ft_put_hex_up.c ft_put_int.c ft_put_ptr.c ft_put_str.c ft_put_uns.c \
        ft_write_num_rev.c translate_hex_low.c  translate_hex_up.c\

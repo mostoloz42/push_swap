@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:35:57 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/16 12:38:47 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/20 09:40:17 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	save_adaptive_strategy(t_bench *bench, int size)
 
 void	print_bench(t_bench *bench)
 {
-	ft_printf("[bench] disorder: %d%%\n", bench->disorder);
+	ft_printf("[bench] disorder: %f%%\n", bench->disorder);
 	ft_printf("[bench] strategy: %s\n", bench->strategy);
 	ft_printf("[bench] total ops: %d\n", bench->total);
 	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d \n",
