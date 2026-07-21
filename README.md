@@ -10,24 +10,25 @@ Se hace con un conjunto limitado de instrucciones y utilizando el menor número 
 
 Cuenta con un **selector de estrategia**:
 
-**--simple** fuerza el uso de el algoritmo O(*n*2) seleccionado.
+`--simple` fuerza el uso de el algoritmo O(*n*2) seleccionado.
 
-**--medium** fuerza el uso de el algoritmo O(*n*√*n*) seleccionado.
+`--medium` fuerza el uso de el algoritmo O(*n*√*n*) seleccionado.
 
-**--complex** fuerza el uso de el algoritmo O(*n*log*n*) seleccionado.
+`--complex` fuerza el uso de el algoritmo O(*n*log*n*) seleccionado.
 
-**--adaptive** fuerza el uso del algoritmo adaptativo basado en desorden seleccionado. Este será el comportamiento por defecto si no se indica un selector
+`--adaptive` fuerza el uso del algoritmo adaptativo basado en desorden seleccionado. Este será el comportamiento por defecto si no se indica un selector
 
-También con un **modo benchmarck** (`--bench`):
-
-Que muestra métricas detalladas.
+También cuenta con un **modo benchmark** (`--bench`) que muestra métricas detalladas, como el porcentaje de desorden, el algoritmo elegido o cuantas operaciones de cada tipo se han realizado.
 
 Índice de **Desorden**:
 
 El proyecto calcula inicialmente un coeficiente entre `0` y `1` mediante una función. A partir de este índice, se bifurca en tres implementaciones:
-Desorden bajo (<0.2)
-Desorden medio (0.2 a 0.5)
-Desorden alto (>=0.5)
+
+* Desorden bajo (<0.2)
+
+* Desorden medio (0.2 a 0.5)
+
+* Desorden alto (>=0.5)
 
 ## Explicación y justificación del algoritmo
 
@@ -39,7 +40,7 @@ La arquitectura adaptativa del programa se diseñó bajo un principio estricto: 
 
 * **Radix para Algoritmo complejo:** Radix ofrece predictibilidad absoluta y consistencia ciega. Al mapear previamente los números a índices correlativos de `0` a `size - 1`, nos independizamos de la magnitud de los números originales. Evaluar el bit menos significativo en cada pasada garantiza que el programa realice exactamente el mismo número de comprobaciones por elemento, logrando un flujo constante y seguro que estabiliza el conteo de movimientos por debajo de los límites críticos de aprobado en listas grandes.
 
-### Contrubución de cada estudiante:
+### Contribución de cada estudiante:
 
 | Funciones de: | Nombre:       | Descripción:                 |
 |---------------|---------------|------------------------------|
@@ -48,7 +49,7 @@ La arquitectura adaptativa del programa se diseñó bajo un principio estricto: 
 | calculate_disorder.c, create_list.c, validate_imput.c | moztoloz | Ver el índice de desorden, crear la lista doblemente enlazada con el stack y validar.|
 | simple_sort.c, Makefile | mostoloz | Algoritmo simple y Makefile junto con la libft y el ft_printf. |
 | medium_sort.c, chuncks.c, aux_medium.c, complex_sort | francysa | Algoritmo intermedio y complejo. |
-| sort_five.c, sort_three.c | mostoloz | Casos específicos con desorden de números. |
+| sort_five.c, sort_three.c | mostoloz | Casos específicos segun la cantidad de números. |
 | nodos.c, t_index.c | francysa | Ajuste de algunas funciones de Libft para nuestras listas e Indexacion. |
 | push_swap.h | mostoloz y francysa | Hemos ido construyendo juntos el header a medida que vamos avanzando. |
 | swap.c, rotate.c | mostoloz | Movimientos en las pilas. |
