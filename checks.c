@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:08:16 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/17 13:03:39 by francysa         ###   ########.fr       */
+/*   Updated: 2026/07/23 10:32:44 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,24 +54,17 @@ static int	ft_process_split(char **aux, int *num, int *cuent_num)
 	while (aux[i] != NULL)
 	{
 		if (ft_is_number(aux[i]) != 1)
-		{
-			ft_free_split(aux);
-			return (0);
-		}
+			return (ft_free_split(aux), 0);
 		num_present = ft_atol(aux[i]);
 		if (ft_min_max(num_present) != 1)
 			return (ft_free_split(aux), 0);
 		if (ft_check_duplicate (num, num_present, *cuent_num) == 1)
-		{
-			ft_free_split(aux);
-			return (0);
-		}
+			return (ft_free_split(aux), 0);
 		num[*cuent_num] = num_present;
 		(*cuent_num)++;
 		i++;
 	}
-	ft_free_split(aux);
-	return (1);
+	return (ft_free_split(aux), 1);
 }
 
 int	*ft_check(int argc, char **argv, int *lot_num, t_bench *bench)
@@ -87,9 +80,7 @@ int	*ft_check(int argc, char **argv, int *lot_num, t_bench *bench)
 		return (0);
 	while (i < argc)
 	{
-		if (ft_flags(argv[i], bench) == 1)
-			i++;
-		else
+		if (ft_flags(argv[i], bench) != 1)
 		{
 			aux_split = ft_split(argv[i], ' ');
 			if (ft_process_split(aux_split, numbers, lot_num) == 0)
@@ -97,8 +88,8 @@ int	*ft_check(int argc, char **argv, int *lot_num, t_bench *bench)
 				free(numbers);
 				return (0);
 			}
-			i++;
 		}
+		i++;
 	}
 	return (numbers);
 }

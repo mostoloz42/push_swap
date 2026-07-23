@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francysa <francysa@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:11:10 by francysa          #+#    #+#             */
-/*   Updated: 2026/07/20 09:40:54 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/23 10:24:20 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	main(int argc, char **argv)
 		return (1);
 	ft_bzero(bench, sizeof(t_bench));
 	numbers = ft_check(argc, argv, &lot_num, bench);
-	if (!numbers)
-		return (write(2, "Error\n", 6), free(bench), 1);
+	if (!numbers || lot_num == 0)
+		return (write(2, "Error\n", 6), free(bench), free(numbers), 1);
 	stack_a = create_list(numbers, lot_num);
 	free(numbers);
 	if (!stack_a)
