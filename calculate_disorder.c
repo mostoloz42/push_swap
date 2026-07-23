@@ -6,7 +6,7 @@
 /*   By: mostoloz <mostoloz@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 10:02:53 by mostoloz          #+#    #+#             */
-/*   Updated: 2026/07/21 11:55:10 by mostoloz         ###   ########.fr       */
+/*   Updated: 2026/07/23 09:43:13 by mostoloz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ float	calculate_disorder(t_stack *stack, t_bench *bench)
 		}
 		stack = stack->next;
 	}
+	if (mistakes == 0)
+		return (bench->disorder = 0, 0);
 	bench->disorder = ((mistakes / pairs) * 100);
 	return (mistakes / pairs);
 }
